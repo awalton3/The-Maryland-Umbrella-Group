@@ -1,0 +1,11 @@
+<div class="auth" layout="column" layout-align="center">
+    <div>
+        <auth-form user="$ctrl.user" message="{{ $ctrl.error }}" button="Create user" on-submit="$ctrl.createUser($event);">
+        </auth-form>
+    </div>
+    <center>
+        <div>
+            <a ui-sref="auth.login" class="auth__trans">Already have an account? Login here.</a>
+        </div>
+    </center>
+</div>

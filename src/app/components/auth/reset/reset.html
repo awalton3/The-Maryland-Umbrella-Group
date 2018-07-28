@@ -1,0 +1,29 @@
+<div class="auth" layout="column" layout-align="center">
+    <form width="100%" name="authForm" novalidate ng-submit="$ctrl.reset($ctrl.user.email)">
+        <div width="100%" layout="column" layout-align="center center">
+            <div>
+                <img src="img/2000px-General_Electric_logo.svg.png" width="50px" />
+            </div>
+            <div style="min-width:25%">
+                <md-list>
+                    <md-list-item>
+                        <md-input-container class="md-block" layout-fill>
+                            <label>Email</label>
+                            <input type="email" name="email" ng-model="$ctrl.user.email" autocomplete="off" />
+                        </md-input-container>
+                    </md-list-item>
+                </md-list>
+            </div>
+            <div>
+                <md-button type="submit" ng-disabled="authForm.$invalid" class="md-raised auth__button">
+                    <h1 class="auth__buttonText">RESET</h1>
+                </md-button>
+            </div>
+        </div>
+    </form>
+    <center>
+        <div>
+            <a ui-sref="auth.login" class="auth__trans">Or login with an existing account.</a>
+        </div>
+    </center>
+</div>
