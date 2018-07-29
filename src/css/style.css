@@ -55,15 +55,16 @@ md-input-container.md-input-focused:not([md-no-float]) .md-select-placeholder sp
 }
 
 .auth__input {
-  color: white;
+  color: white !important;
 }
 
 .auth__input--style {
   background-color: #2b5570 !important;
   border-radius: 33.5px !important;
   width: 284px !important;
-  font-size: 13px;
-  color: white;
+  font-size: 13px !important;
+  color: white !important;
+  font-family: 'Montserrat', sans-serif !important;
 }
 
 .auth__input--height {
