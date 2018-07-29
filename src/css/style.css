@@ -28,6 +28,11 @@ root .loader {
 
 /** auth **/
 
+md-input-container.md-input-focused:not([md-no-float]) .md-select-placeholder span:first-child {
+   -webkit-transform: none;
+   transform: none;
+}
+
 .auth {
   min-height: 100vh;
 }
@@ -39,7 +44,7 @@ root .loader {
 }
 
 .auth__listItem--marginTop {
-  margin-top: -30px !important;
+  margin-top: -10px !important;
 }
 
 .auth__buttonText {
@@ -49,9 +54,16 @@ root .loader {
   color: white;
 }
 
+.auth__input {
+  color: white;
+}
+
 .auth__input--style {
   background-color: #2b5570 !important;
   border-radius: 33.5px !important;
+  width: 284px !important;
+  font-size: 13px;
+  color: white;
 }
 
 .auth__input--height {
