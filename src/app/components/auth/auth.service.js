@@ -118,8 +118,8 @@ function AuthService(Parse) {
      */
 
     this.isAuthenticated = function () {
-        return !!(Parse.User.current() && Parse.User.current()
-            .authenticated());
+        // return !!(Parse.User.current() && Parse.User.current()
+        //     .authenticated());
     };
 
     /**

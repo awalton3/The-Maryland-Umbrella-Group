@@ -1,31 +1,31 @@
 <form width="100%" name="authForm" novalidate ng-submit="$ctrl.submitForm();">
-    <div width="100%" layout="column" layout-align="center center">
-        <div>
-            <img src="img/2000px-General_Electric_logo.svg.png" width="50px" />
-        </div>
-        <div style="min-width:25%">
-            <md-list>
-                <md-list-item>
-                    <md-input-container class="md-block" layout-fill>
-                        <label>Email</label>
-                        <input type="email" name="email" ng-model="$ctrl.user.email" autocomplete="off" />
-                    </md-input-container>
-                </md-list-item>
-                <md-list-item layout-align="center center" layout="row" style="position: relative;">
-                    <md-input-container class="md-block auth__input" style="position: relative; width:100%">
-                        <label>Password</label>
-                        <input type="password" name="password" ng-model="$ctrl.user.password" autocomplete="off" />
-                    </md-input-container>
-                    <md-button ng-if="$ctrl.button === 'Login'" ng-click="$ctrl.onReset($event)" style="position: absolute; right:10px; top:13px;">
-                        <p class="forgot-text">FORGOT?</p>
-                    </md-button>
-                </md-list-item>
-            </md-list>
-        </div>
-        <div>
-            <md-button type="submit" ng-disabled="authForm.$invalid" class="md-raised auth__button">
-                <h1 class="auth__buttonText">{{ $ctrl.button }}</h1>
-            </md-button>
-        </div>
+  <div width="100%" layout="column" layout-align="center center">
+    <div>
+      <img src="img/mughub_logo.png" width="210px" />
     </div>
+    <div style="min-width:25%">
+
+      <md-list>
+        <md-list-item class="auth__listItem--marginTop">
+          <md-input-container class="md-block" layout-fill>
+            <label style="color:  #eaeaea; font-size: 13px; font-family: 'Montserrat', sans-serif; padding: 5px 0px 0px 20px"><i style="vertical-align: middle; color:#eaeaea; margin:0px 4px 1px 4px" class="material-icons md-18">person</i>USERNAME</label>
+            <input class="auth__input--style auth__input--height" type="email" name="email" ng-model="$ctrl.user.email" autocomplete="off" />
+          </md-input-container>
+        </md-list-item>
+        <md-list-item layout-align="center center" layout="row" class="auth__listItem--marginTop">
+          <md-input-container md-no-float class="md-block auth__input" style="position: relative; width:100%">
+            <label style="color:  #eaeaea; font-size: 13px; font-family: 'Montserrat', sans-serif; padding: 5px 0px 0px 20px"><i style="vertical-align: middle; color:#eaeaea; margin:0px 4px" class="material-icons md-18">lock</i> PASSWORD</label>
+            <input class="auth__input--style auth__input--height" type="password" name="password" ng-model="$ctrl.user.password" autocomplete="off" />
+          </md-input-container>
+          <p ng-if="$ctrl.button === 'Login'" ng-click="$ctrl.onReset($event)" class="auth__forgot">?</p>
+        </md-list-item>
+      </md-list>
+
+    </div>
+    <div style="margin-top: -18px;">
+      <md-button type="submit" ng-disabled="authForm.$invalid" class="md-raised auth__button auth__input--height">
+        <h1 class="auth__buttonText">{{ $ctrl.button }}</h1>
+      </md-button>
+    </div>
+  </div>
 </form>
