@@ -46,7 +46,7 @@ md-input-container.md-input-focused:not([md-no-float]) .md-select-placeholder sp
 }
 
 md-tabs.md-no-animation md-tab-content {
-    transition: none;
+    transition: none
 }
 
 .auth {
@@ -365,12 +365,4 @@ md-tabs.md-no-animation md-tab-content {
     -o-animation: fadeIn 0.5s linear !important;
     -moz-animation: fadeIn 0.5s linear !important;
     animation: fadeIn 0.5s linear !important;
-}
-
-.ng-enter {
-    z-index: 9999 !important;
-}
-
-.ng-leave {
-    z-index: 9999 !important;
 }
