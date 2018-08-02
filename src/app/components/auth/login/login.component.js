@@ -17,14 +17,14 @@ angular
     .component('login', login)
     .config(function ($stateProvider, $urlRouterProvider) {
         $stateProvider
-            .state('auth', {
-                redirectTo: 'auth.login',
-                url: '/auth',
-                template: '<div ui-view></div>'
-            })
+            // .state('auth', {
+            //     redirectTo: 'auth.login',
+            //     url: '/auth',
+            //     template: '<div ui-view></div>'
+            // })
             .state('auth.login', {
                 url: '/login',
                 component: 'login'
             });
-        $urlRouterProvider.otherwise('/auth/login');
+        // $urlRouterProvider.otherwise('/auth/login');
     });

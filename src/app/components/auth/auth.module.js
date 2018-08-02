@@ -34,11 +34,11 @@ angular
             return AuthService
                 .requireAuthentication()
                 .catch(function () {
-                    return $state.target('auth.login');
+                    return $state.target('auth');
                 });
         });
         $transitions.onStart({
-            to: 'auth.*'
+            to: 'auth'
         }, function () {
             if (AuthService.isAuthenticated()) {
                 return $state.go('app');
