@@ -1,3 +1,21 @@
-<div>
-  Hello World
+<div ng-cloak class="auth">
+  <md-content>
+    <md-tabs md-dynamic-height md-border-bottom>
+
+      <md-tab label="STUDENT">
+        <md-content class="md-padding background">
+          <login ng-if="!$ctrl.showRegister" on-register="$ctrl.toggleRegister()" user-type="STUDENT"></login>
+          <register ng-if="$ctrl.showRegister" on-login="$ctrl.toggleRegister()" user-type="STUDENT"></register>
+        </md-content>
+      </md-tab>
+
+      <md-tab label="ADMIN">
+        <md-content class="md-padding background">
+          <login ng-if="!$ctrl.showRegister" on-register="$ctrl.toggleRegister()" user-type="ADMIN"></login>
+          <register ng-if="$ctrl.showRegister" on-login="$ctrl.toggleRegister()" user-type="ADMIN"></register>
+        </md-content>
+      </md-tab>
+
+    </md-tabs>
+  </md-content>
 </div>

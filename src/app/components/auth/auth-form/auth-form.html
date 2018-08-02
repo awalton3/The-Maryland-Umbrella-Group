@@ -8,13 +8,13 @@
       <md-list>
         <md-list-item class="auth__listItem--marginTop">
           <md-input-container class="md-block" layout-fill>
-            <label style="color:  #eaeaea; font-size: 13px; font-family: 'Montserrat', sans-serif; padding: 5px 0px 0px 20px"><i style="vertical-align: middle; color:#eaeaea; margin:0px 4px 1px 4px" class="material-icons md-18">person</i>USERNAME</label>
+            <label style="color:  #eaeaea; font-size: 13px; font-family: 'Montserrat', sans-serif; padding: 5px 0px 0px 20px"><i style="vertical-align: middle; color:#eaeaea; margin:0px 4px 1px 4px" class="material-icons md-18">person</i>{{ $ctrl.userType }} USERNAME</label>
             <input class="auth__input--style auth__input--height" type="email" name="email" ng-model="$ctrl.user.email" autocomplete="off" />
           </md-input-container>
         </md-list-item>
         <md-list-item layout-align="center center" layout="row" class="auth__listItem--marginTop">
           <md-input-container md-no-float class="md-block auth__input" style="position: relative; width:100%">
-            <label style="color:  #eaeaea; font-size: 13px; font-family: 'Montserrat', sans-serif; padding: 5px 0px 0px 20px"><i style="vertical-align: middle; color:#eaeaea; margin:0px 4px" class="material-icons md-18">lock</i> PASSWORD</label>
+            <label style="color:  #eaeaea; font-size: 13px; font-family: 'Montserrat', sans-serif; padding: 5px 0px 0px 20px"><i style="vertical-align: middle; color:#eaeaea; margin:0px 4px" class="material-icons md-18">lock</i>PASSWORD</label>
             <input class="auth__input--style auth__input--height" type="password" name="password" ng-model="$ctrl.user.password" autocomplete="off" />
           </md-input-container>
           <p ng-if="$ctrl.button === 'Login'" ng-click="$ctrl.onReset($event)" class="auth__forgot">?</p>

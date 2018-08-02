@@ -17,6 +17,7 @@
 var authForm = {
     bindings: {
         user: '<',
+        userType: '<',
         button: '@',
         message: '@',
         onSubmit: '&',

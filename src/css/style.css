@@ -9,7 +9,11 @@
 body {
   font-family: 'Montserrat', sans-serif;
   color: #5c5c5c;
-  background-color: #eaeaea;
+  background-color: #eaeaea !important;
+}
+
+.background {
+  background-color: #eaeaea !important;
 }
 
 root {
@@ -81,6 +85,7 @@ md-input-container.md-input-focused:not([md-no-float]) .md-select-placeholder sp
 }
 
 .auth__trans {
+  cursor: pointer;
   text-align: center;
   font-size: 10pt;
   padding-top: 20px;

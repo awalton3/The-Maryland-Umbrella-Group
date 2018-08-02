@@ -1,11 +1,11 @@
 <div class="auth" layout="column" layout-align="center">
     <div>
-        <auth-form user="$ctrl.user" button="Login" on-submit="$ctrl.loginUser($event);" on-reset="$ctrl.goToReset();">
+        <auth-form user="$ctrl.user" user-type="$ctrl.userType" button="Login" on-submit="$ctrl.loginUser($event);" on-reset="$ctrl.goToReset();">
         </auth-form>
     </div>
     <center>
         <div>
-            <a ui-sref="auth.register" class="auth__trans">
+            <a ng-click="$ctrl.onRegister($event)" class="auth__trans">
       Don't have an account? Create one here.
     </a>
         </div>
