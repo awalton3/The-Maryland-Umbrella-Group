@@ -1,21 +1,29 @@
-<div ng-cloak class="auth">
-  <md-content>
-    <md-tabs md-dynamic-height md-border-bottom>
+<div ng-cloak class="width--full">
+  <md-content class="background" layout="column" layout-align="center center">
 
-      <md-tab label="STUDENT">
-        <md-content class="md-padding background">
-          <login ng-if="!$ctrl.showRegister" on-register="$ctrl.toggleRegister()" user-type="STUDENT"></login>
-          <register ng-if="$ctrl.showRegister" on-login="$ctrl.toggleRegister()" user-type="STUDENT"></register>
-        </md-content>
-      </md-tab>
+    <div>
+      <img src="img/mughub_logo.png" width="210px" />
+    </div>
 
-      <md-tab label="ADMIN">
-        <md-content class="md-padding background">
-          <login ng-if="!$ctrl.showRegister" on-register="$ctrl.toggleRegister()" user-type="ADMIN"></login>
-          <register ng-if="$ctrl.showRegister" on-login="$ctrl.toggleRegister()" user-type="ADMIN"></register>
-        </md-content>
-      </md-tab>
+    <div class="width--full">
+      <md-tabs layout="row" layout-align="center center" class="auth__tabContainer width--full">
 
-    </md-tabs>
+        <md-tab label="STUDENT">
+          <md-content class="md-padding background">
+            <login ng-if="!$ctrl.showRegister" on-register="$ctrl.toggleRegister()" user-type="STUDENT"></login>
+            <register ng-if="$ctrl.showRegister" on-login="$ctrl.toggleRegister()" user-type="STUDENT"></register>
+          </md-content>
+        </md-tab>
+
+        <md-tab label="ADMIN">
+          <md-content class="md-padding background">
+            <login ng-if="!$ctrl.showRegister" on-register="$ctrl.toggleRegister()" user-type="ADMIN"></login>
+            <register ng-if="$ctrl.showRegister" on-login="$ctrl.toggleRegister()" user-type="ADMIN"></register>
+          </md-content>
+        </md-tab>
+
+      </md-tabs>
+    </div>
+
   </md-content>
 </div>
