@@ -45,14 +45,21 @@ md-input-container.md-input-focused:not([md-no-float]) .md-select-placeholder sp
    transform: none;
 }
 
+md-tabs.md-no-animation md-tab-content {
+    transition: none;
+}
+
 .auth {
   min-height: 100vh;
   /* width: 100%; */
 }
 
 .auth__tabContainer {
-  min-height: 100vh;
-  min-width: 1000px;
+
+}
+
+.auth__tab--color {
+  color: #2b5570 !important;
 }
 
 .auth__button {
@@ -312,4 +319,58 @@ md-input-container.md-input-focused:not([md-no-float]) .md-select-placeholder sp
   100% {
     transform: rotate(360deg);
   }
+}
+
+
+/* Animations */
+
+@-webkit-keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@-o-keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@-moz-keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.auth--animation {
+    -webkit-animation: fadeIn 0.5s linear !important;
+    -o-animation: fadeIn 0.5s linear !important;
+    -moz-animation: fadeIn 0.5s linear !important;
+    animation: fadeIn 0.5s linear !important;
+}
+
+.ng-enter {
+    z-index: 9999 !important;
+}
+
+.ng-leave {
+    z-index: 9999 !important;
 }

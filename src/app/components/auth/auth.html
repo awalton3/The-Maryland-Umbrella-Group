@@ -4,21 +4,39 @@
     <div>
       <img src="img/mughub_logo.png" width="210px" />
     </div>
+    <!--
+    <md-nav-bar md-selected-nav-item="currentNavItem" nav-bar-aria-label="navigation links">
+      <md-nav-item md-nav-sref="auth.login" name="page1">
+        STUDENT
+      </md-nav-item>
+      <md-nav-item md-nav-sref="auth.login" name="page2" ng-disabled="secondTabDisabled">
+        TUTOR
+      </md-nav-item>
+      <!-- these require actual routing with ui-router or ng-route, so they
+     won't work in the demo
+     <md-nav-item md-nav-href="#page4" name="page5">Page Four</md-nav-item>
+     <md-nav-item md-nav-sref="app.page5" name="page4">Page Five</md-nav-item>
+     You can also add options for the <code>ui-sref-opts</code> attribute.
+     <md-nav-item md-nav-sref="page6" sref-opts="{reload:true, notify:true}">
+       Page Six
+     </md-nav-item>
+
+    </md-nav-bar> -->
 
     <div class="width--full" style="margin-top: -30px;">
-      <md-tabs class="auth__tabContainer width--full" md-center-tabs="true">
+      <md-tabs class="auth__tabContainer width--full md-no-animation" md-center-tabs="true">
 
         <md-tab label="STUDENT">
           <md-content class="md-padding background">
-            <login ng-if="!$ctrl.showRegister" on-register="$ctrl.toggleRegister()" user-type="STUDENT"></login>
-            <register ng-if="$ctrl.showRegister" on-login="$ctrl.toggleRegister()" user-type="STUDENT"></register>
+              <login ng-if="!$ctrl.showRegister" on-register="$ctrl.toggleRegister()" user-type="STUDENT"></login>
+              <register ng-if="$ctrl.showRegister" on-login="$ctrl.toggleRegister()" user-type="STUDENT"></register>
           </md-content>
         </md-tab>
 
         <md-tab label="TUTOR">
           <md-content class="md-padding background">
-            <login ng-if="!$ctrl.showRegister" on-register="$ctrl.toggleRegister()" user-type="TUTOR"></login>
-            <register ng-if="$ctrl.showRegister" on-login="$ctrl.toggleRegister()" user-type="TUTOR"></register>
+              <login ng-if="!$ctrl.showRegister" on-register="$ctrl.toggleRegister()" user-type="TUTOR"></login>
+              <register ng-if="$ctrl.showRegister" on-login="$ctrl.toggleRegister()" user-type="TUTOR"></register>
           </md-content>
         </md-tab>
 
