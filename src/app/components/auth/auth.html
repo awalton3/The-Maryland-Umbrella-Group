@@ -1,11 +1,11 @@
-<div ng-cloak class="width--full">
-  <md-content class="background" layout="column" layout-align="center center">
+<div ng-cloak class="width--full height--full">
+  <md-content class="background height--full" layout="column" layout-align="center center">
 
     <div>
       <img src="img/mughub_logo.png" width="210px" />
     </div>
 
-    <div class="width--full">
+    <div class="width--full" style="margin-top: -30px;">
       <md-tabs class="auth__tabContainer width--full" md-center-tabs="true">
 
         <md-tab label="STUDENT">
@@ -15,10 +15,10 @@
           </md-content>
         </md-tab>
 
-        <md-tab label="ADMIN">
+        <md-tab label="TUTOR">
           <md-content class="md-padding background">
-            <login ng-if="!$ctrl.showRegister" on-register="$ctrl.toggleRegister()" user-type="ADMIN"></login>
-            <register ng-if="$ctrl.showRegister" on-login="$ctrl.toggleRegister()" user-type="ADMIN"></register>
+            <login ng-if="!$ctrl.showRegister" on-register="$ctrl.toggleRegister()" user-type="TUTOR"></login>
+            <register ng-if="$ctrl.showRegister" on-login="$ctrl.toggleRegister()" user-type="TUTOR"></register>
           </md-content>
         </md-tab>
 
