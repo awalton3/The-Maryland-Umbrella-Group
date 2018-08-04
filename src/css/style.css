@@ -49,6 +49,11 @@ md-tabs.md-no-animation md-tab-content {
     transition: none
 }
 
+md-tabs.md-default-theme md-ink-bar, md-tabs md-ink-bar {
+    color: #de6600 !important;
+    background-color: #de6600 !important;
+}
+
 .auth {
   min-height: 100vh;
   /* width: 100%; */
