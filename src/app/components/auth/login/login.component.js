@@ -12,7 +12,8 @@ var login = {
     controller: 'LoginController',
     bindings: {
       userType: '@',
-      onRegister: '&'
+      onRegister: '&',
+      onReset: '&'
     }
 };
 

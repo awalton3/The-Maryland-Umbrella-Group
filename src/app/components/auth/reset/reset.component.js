@@ -3,21 +3,24 @@
  * @name component.auth:reset
  *
  * @description
- * This component handles password reset and is toggled in login component 
+ * This component handles password reset and is toggled in login component
  *
  */
 
 var reset = {
     templateUrl: './reset.html',
-    controller: 'ResetController'
+    controller: 'ResetController',
+    bindings: {
+      onLogin: '&'
+    }
 };
 
 angular
     .module('components.auth')
-    .component('reset', reset)
-    .config(function ($stateProvider) {
-        $stateProvider.state('auth.reset', {
-            url: '/reset',
-            component: 'reset'
-        });
-    });
+    .component('reset', reset);
+    // .config(function ($stateProvider) {
+    //     $stateProvider.state('auth.reset', {
+    //         url: '/reset',
+    //         component: 'reset'
+    //     });
+    // });

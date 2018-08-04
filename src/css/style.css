@@ -17,11 +17,11 @@ body {
 }
 
 .width--full {
-  width: 100vw !important;
+  min-width: 100vw !important;
 }
 
 .height--full {
-  height: 100vh !important;
+  min-height: 100vh !important;
 }
 
 root {
@@ -41,22 +41,24 @@ root .loader {
 /** auth **/
 
 md-input-container.md-input-focused:not([md-no-float]) .md-select-placeholder span:first-child {
-   -webkit-transform: none;
-   transform: none;
+  -webkit-transform: none;
+  transform: none;
 }
 
 md-tabs.md-no-animation md-tab-content {
-    transition: none
+  visibility: visible;
+  opacity: 1;
+  transition: visibility 0s linear 0s, opacity 300ms;
 }
 
 md-tabs.md-default-theme md-ink-bar, md-tabs md-ink-bar {
-    color: #de6600 !important;
-    background-color: #de6600 !important;
+  color: #de6600 !important;
+  background-color: #de6600 !important;
 }
 
 md-tabs.md-default-theme .md-tab.md-active, md-tabs .md-tab.md-active, md-tabs.md-default-theme .md-tab.md-active md-icon, md-tabs .md-tab.md-active md-icon, md-tabs.md-default-theme .md-tab.md-focused, md-tabs .md-tab.md-focused, md-tabs.md-default-theme .md-tab.md-focused md-icon, md-tabs .md-tab.md-focused md-icon {
-    color: #2b5570 !important;
-    font-weight: bold !important;
+  color: #2b5570 !important;
+  font-weight: bold !important;
 }
 
 .auth {
@@ -64,9 +66,7 @@ md-tabs.md-default-theme .md-tab.md-active, md-tabs .md-tab.md-active, md-tabs.m
   /* width: 100%; */
 }
 
-.auth__tabContainer {
-
-}
+.auth__tabContainer {}
 
 .auth__tab--color {
   color: #2b5570 !important;
@@ -331,48 +331,47 @@ md-tabs.md-default-theme .md-tab.md-active, md-tabs .md-tab.md-active, md-tabs.m
   }
 }
 
-
 /* Animations */
 
 @-webkit-keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 @-o-keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 @-moz-keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 @keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 .auth--animation {
-    -webkit-animation: fadeIn 0.5s linear !important;
-    -o-animation: fadeIn 0.5s linear !important;
-    -moz-animation: fadeIn 0.5s linear !important;
-    animation: fadeIn 0.5s linear !important;
+  -webkit-animation: fadeIn 0.7s linear !important;
+  -o-animation: fadeIn 0.7s linear !important;
+  -moz-animation: fadeIn 0.7s linear !important;
+  animation: fadeIn 0.7s linear !important;
 }

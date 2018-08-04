@@ -1,9 +1,6 @@
-<div class="auth" layout="column" layout-align="center">
+<div layout="column" layout-align="center" class="auth--animation">
     <form width="100%" name="authForm" novalidate ng-submit="$ctrl.reset($ctrl.user.email)">
         <div width="100%" layout="column" layout-align="center center">
-            <div>
-                <img src="img/2000px-General_Electric_logo.svg.png" width="50px" />
-            </div>
             <div style="min-width:25%">
                 <md-list>
                     <md-list-item>
@@ -23,7 +20,7 @@
     </form>
     <center>
         <div>
-            <a ui-sref="auth.login" class="auth__trans">Or login with an existing account.</a>
+            <a ng-click="$ctrl.onLogin($event)" class="auth__trans">Or login with an existing account.</a>
         </div>
     </center>
 </div>
