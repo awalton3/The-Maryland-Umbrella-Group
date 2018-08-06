@@ -11,7 +11,7 @@
           <md-content class="background">
               <login ng-if="$ctrl.showLogin" on-register="$ctrl.toggleRegister()" on-reset="$ctrl.toggleReset()" user-type="STUDENT"></login>
               <register ng-if="$ctrl.showRegister" on-login="$ctrl.toggleRegister()" user-type="STUDENT"></register>
-              <reset ng-if="$ctrl.showReset" on-login="$ctrl.toggleLogin()"></reset>
+              <reset ng-if="$ctrl.showReset" on-login="$ctrl.toggleLogin()" user-type="STUDENT"></reset>
           </md-content>
         </md-tab>
 
@@ -19,7 +19,7 @@
           <md-content class="background auth--animation ng-enter">
               <login ng-if="$ctrl.showLogin" on-register="$ctrl.toggleRegister()" on-reset="$ctrl.toggleReset($event)" user-type="TUTOR"></login>
               <register ng-if="$ctrl.showRegister" on-login="$ctrl.toggleRegister()" user-type="TUTOR"></register>
-              <reset ng-if="$ctrl.showReset" on-login="$ctrl.toggleLogin()"></reset>
+              <reset ng-if="$ctrl.showReset" on-login="$ctrl.toggleLogin()" user-type="TUTOR"></reset>
           </md-content>
         </md-tab>
 

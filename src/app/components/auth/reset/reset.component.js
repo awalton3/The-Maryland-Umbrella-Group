@@ -11,7 +11,8 @@ var reset = {
     templateUrl: './reset.html',
     controller: 'ResetController',
     bindings: {
-      onLogin: '&'
+      onLogin: '&',
+      userType: '@'
     }
 };
 
