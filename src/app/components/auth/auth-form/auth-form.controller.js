@@ -1,13 +1,13 @@
 function AuthFormController($state) {
   var ctrl = this;
 
-  ctrl.$onChanges = function (changes) {
+  ctrl.$onChanges = function(changes) {
     if (changes.user) {
       ctrl.user = angular.copy(ctrl.user);
     }
   };
 
-  ctrl.submitForm = function () {
+  ctrl.submitForm = function() {
     //console.log("submit called");
     ctrl.onSubmit({
       $event: {
@@ -26,5 +26,5 @@ function AuthFormController($state) {
 }
 
 angular
-    .module('components.auth')
-    .controller('AuthFormController', AuthFormController);
+  .module('components.auth')
+  .controller('AuthFormController', AuthFormController);

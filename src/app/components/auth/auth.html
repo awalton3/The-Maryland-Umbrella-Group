@@ -8,7 +8,7 @@
       <md-tabs class="auth__tabContainer width--full md-no-animation" md-center-tabs="true">
 
         <md-tab label="STUDENT">
-          <md-content class="background">
+          <md-content class="background auth--animation ng-enter">
               <login ng-if="$ctrl.showLogin" on-register="$ctrl.toggleRegister()" on-reset="$ctrl.toggleReset($event)" user-type="STUDENT"></login>
               <register ng-if="$ctrl.showRegister" on-login="$ctrl.toggleRegister()" user-type="STUDENT"></register>
               <reset ng-if="$ctrl.showReset" on-login="$ctrl.toggleLogin()" user-type="STUDENT" user-email="$ctrl.userEmail"></reset>

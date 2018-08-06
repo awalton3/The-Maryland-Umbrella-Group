@@ -70,6 +70,7 @@ function AuthService(Parse) {
         auth.set("username", user.email);
         auth.set("password", user.password);
         auth.set("email", user.email);
+        auth.set("type", user.type)
         return auth
             .signUp(null, {
                 success: function (auth) {},

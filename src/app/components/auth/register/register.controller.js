@@ -6,7 +6,9 @@ function RegisterController(AuthService, $state) {
         ctrl.error = null;
         ctrl.user = {
             email: '',
-            password: ''
+            password: '',
+            type: ctrl.userType
+
         };
     };
 
