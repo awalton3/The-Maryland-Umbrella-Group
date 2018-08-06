@@ -8,7 +8,6 @@ function RegisterController(AuthService, $state) {
             email: '',
             password: '',
             type: ctrl.userType
-
         };
     };
 

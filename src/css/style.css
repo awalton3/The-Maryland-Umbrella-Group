@@ -52,6 +52,7 @@ md-input-container.auth__input {
 
 md-input-container.auth__input .md-input {
   padding-left: 20px !important;
+  padding-right: 20px !important;
 }
 
 md-tabs.md-no-animation md-tab-content {
@@ -106,6 +107,26 @@ md-tabs.md-default-theme .md-tab.md-active, md-tabs .md-tab.md-active, md-tabs.m
   background-color: #2b5570 !important;
   border-radius: 33.5px !important;
   width: 284px !important;
+  font-size: 13px !important;
+  color: white !important;
+  font-family: 'Montserrat', sans-serif !important;
+}
+
+.auth__input--styleNameLeft {
+  text-align: center;
+  background-color: #2b5570 !important;
+  border-radius: 33.5px 0px 0px 33.5px !important;
+  width: 137px !important;
+  font-size: 13px !important;
+  color: white !important;
+  font-family: 'Montserrat', sans-serif !important;
+}
+
+.auth__input--styleNameRight {
+  text-align: center;
+  background-color: #2b5570 !important;
+  border-radius: 0px 33.5px 33.5px 0px !important;
+  width: 137px !important;
   font-size: 13px !important;
   color: white !important;
   font-family: 'Montserrat', sans-serif !important;
