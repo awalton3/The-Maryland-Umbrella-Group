@@ -4,7 +4,7 @@
     <div>
       <md-list-item>
         <md-input-container layout="row" layout-align="center center" class="auth__input">
-          <label style="color:  #eaeaea; font-size: 13px; font-family: 'Montserrat', sans-serif; padding: 5px 0px 0px 20px"><i style="vertical-align: middle; color:#eaeaea; margin:0px 4px 1px 4px" class="material-icons md-18">person</i>{{ $ctrl.userType }} USERNAME</label>
+          <label style="color:  #eaeaea; font-size: 13px; font-family: 'Montserrat', sans-serif; padding: 5px 0px 0px 20px"><i style="vertical-align: middle; color:#eaeaea; margin:0px 4px 1px 4px" class="material-icons md-18">email</i>EMAIL</label>
           <input class="auth__input--style auth__input--height" type="email" name="email" ng-model="$ctrl.user.email" autocomplete="off" />
         </md-input-container>
       </md-list-item>
@@ -23,7 +23,7 @@
     <div>
       <md-list-item class="auth__listItem--marginTop">
         <md-button type="submit" ng-disabled="authForm.$invalid" class="md-raised auth__button auth__input--height">
-          <h1 class="auth__buttonText">{{ $ctrl.button }}</h1>
+          <h1 class="auth__buttonText">{{ $ctrl.button }} as a {{ $ctrl.userType }}</h1>
         </md-button>
       </md-list-item>
     </div>
