@@ -20,9 +20,18 @@ function LoginController(AuthService, $state) {
       });
   };
 
-  ctrl.goToReset = function () {
-    $state.go('auth.reset');
-  }
+  ctrl.reset = function(event) {
+    console.log(event.email)
+    ctrl.onReset({
+      $event: {
+        email: event.email
+      }
+    });
+  };
+
+  // ctrl.goToReset = function () {
+  //   $state.go('auth.reset');
+  // }
 
 }
 

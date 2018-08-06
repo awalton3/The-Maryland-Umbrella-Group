@@ -20,9 +20,9 @@ function AuthController($state) {
     }
 
     function toggleReset(event) {
+      ctrl.userEmail = event.email;
       ctrl.showReset = !ctrl.showReset;
       ctrl.showLogin = !ctrl.showLogin;
-
     }
 
     function toggleLogin() {

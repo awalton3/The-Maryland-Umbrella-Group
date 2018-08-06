@@ -12,7 +12,8 @@ var reset = {
     controller: 'ResetController',
     bindings: {
       onLogin: '&',
-      userType: '@'
+      userType: '@',
+      userEmail: '<'
     }
 };
 

@@ -1,6 +1,6 @@
 <div layout="column" layout-align="center" class="auth--animation">
     <div>
-        <auth-form user="$ctrl.user" user-type="$ctrl.userType" button="Login" on-submit="$ctrl.loginUser($event);" on-reset="$ctrl.onReset({$event: $ctrl.user.email})">
+        <auth-form user="$ctrl.user" user-type="$ctrl.userType" button="Login" on-submit="$ctrl.loginUser($event);" on-reset="$ctrl.reset($event)">
         </auth-form>
     </div>
     <center>

@@ -9,9 +9,9 @@
 
         <md-tab label="STUDENT">
           <md-content class="background">
-              <login ng-if="$ctrl.showLogin" on-register="$ctrl.toggleRegister()" on-reset="$ctrl.toggleReset()" user-type="STUDENT"></login>
+              <login ng-if="$ctrl.showLogin" on-register="$ctrl.toggleRegister()" on-reset="$ctrl.toggleReset($event)" user-type="STUDENT"></login>
               <register ng-if="$ctrl.showRegister" on-login="$ctrl.toggleRegister()" user-type="STUDENT"></register>
-              <reset ng-if="$ctrl.showReset" on-login="$ctrl.toggleLogin()" user-type="STUDENT"></reset>
+              <reset ng-if="$ctrl.showReset" on-login="$ctrl.toggleLogin()" user-type="STUDENT" user-email="$ctrl.userEmail"></reset>
           </md-content>
         </md-tab>
 
@@ -19,7 +19,7 @@
           <md-content class="background auth--animation ng-enter">
               <login ng-if="$ctrl.showLogin" on-register="$ctrl.toggleRegister()" on-reset="$ctrl.toggleReset($event)" user-type="TUTOR"></login>
               <register ng-if="$ctrl.showRegister" on-login="$ctrl.toggleRegister()" user-type="TUTOR"></register>
-              <reset ng-if="$ctrl.showReset" on-login="$ctrl.toggleLogin()" user-type="TUTOR"></reset>
+              <reset ng-if="$ctrl.showReset" on-login="$ctrl.toggleLogin()" user-type="TUTOR"  user-email="$ctrl.userEmail"></reset>
           </md-content>
         </md-tab>
 

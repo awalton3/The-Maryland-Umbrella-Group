@@ -15,6 +15,14 @@ function AuthFormController($state) {
       }
     });
   };
+
+  ctrl.reset = function() {
+    ctrl.onReset({
+      $event: {
+        email: ctrl.user.email
+      }
+    });
+  };
 }
 
 angular
