@@ -5,7 +5,7 @@
  * @description Handles authentication for app
  */
 
-function AuthService(Parse) {
+function AuthService(Parse, $state) {
     var auth = new Parse.User(); // creates a new user in Parse
     var currentUser = null; //holds info about current user
 
@@ -42,20 +42,22 @@ function AuthService(Parse) {
      * @returns {object} returns the current user object
      */
 
-    this.login = function (user) {
-        return Parse.User
-            .logIn(user.email, user.password, {
-                success: function (auth) {},
-                error: function (auth, error) {
-                    console.log(error);
-                }
-            })
-            .then(storeAuthData)
-            .then((currentUser) => {
-                sessionStorage.setItem('currentUser', currentUser)
-            });
-
-    };
+     this.login = function (user) {
+         return Parse.User
+             .logIn(user.email, user.password)
+             .then(user => {
+                 if (user.attributes.emailVerified) {
+                     storeAuthData()
+                     $state.go('app')
+                 } else {
+                     this.logout()
+                         .then(() => {
+                             alert('Please verify email address')
+                         })
+                 }
+             })
+             .catch(error => alert(error))
+     };
 
     /**
      * @ngdoc method
@@ -74,13 +76,15 @@ function AuthService(Parse) {
         auth.set("email", user.email);
         auth.set("type", user.type)
         return auth
-            .signUp(null, {
-                success: function (auth) {},
-                error: function (auth, error) {
-                    alert("Error: " + error.code + " " + error.message);
-                }
+            .signUp(null)
+            .then(() => {
+                alert("A verfication email has been sent to " + user.email)
+                this.logout()
+                    .then(() => {
+                        $state.go('auth.login')
+                    })
             })
-            .then(storeAuthData);
+            .catch(error => alert(error))
     };
 
     /**

@@ -5,20 +5,16 @@ function LoginController(AuthService, $state) {
   ctrl.$onInit = function() {
     ctrl.user = {
       email: '',
-      password: ''
+      password: '',
+      type: ctrl.userType
     };
   };
 
   //give user access to app
-  ctrl.loginUser = function(event) {
-    return AuthService
-      .login(event.user)
-      .then(function() {
-        $state.go('app');
-      }, function(reason) {
-        alert(reason);
-      });
-  };
+  ctrl.loginUser = function (event) {
+      return AuthService
+          .login(event.user)
+  }
 
   ctrl.reset = function(event) {
     console.log(event.email)
