@@ -17,11 +17,11 @@ body {
 }
 
 .width--full {
-  min-width: 100vw !important;
+  width: 100vw !important;
 }
 
 .height--full {
-  min-height: 100vh !important;
+  height: 100vh !important;
 }
 
 root {
@@ -43,6 +43,11 @@ root .loader {
 md-input-container.md-input-focused:not([md-no-float]) .md-select-placeholder span:first-child {
   -webkit-transform: none;
   transform: none;
+}
+
+md-input-container.auth__input {
+  margin-bottom: 0;
+  margin-top: 0;
 }
 
 md-tabs.md-no-animation md-tab-content {
@@ -79,7 +84,7 @@ md-tabs.md-default-theme .md-tab.md-active, md-tabs .md-tab.md-active, md-tabs.m
 }
 
 .auth__listItem--marginTop {
-  margin-top: -10px !important;
+  margin-top: 5px !important;
 }
 
 .auth__buttonText {
@@ -136,7 +141,7 @@ md-tabs.md-default-theme .md-tab.md-active, md-tabs .md-tab.md-active, md-tabs.m
   position: absolute !important;
   float: right !important;
   right: 40px !important;
-  top: 29px !important;
+  top: 15px !important;
   color: white;
   font-size: 16px !important;
   cursor: pointer !important;

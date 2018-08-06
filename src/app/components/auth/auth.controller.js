@@ -18,7 +18,8 @@ function AuthController($state) {
       toggleLogin()
     }
 
-    function toggleReset() {
+    function toggleReset(event) {
+      console.log(event);
       ctrl.showReset = !ctrl.showReset;
       toggleLogin();
     }

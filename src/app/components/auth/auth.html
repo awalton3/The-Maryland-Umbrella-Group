@@ -1,5 +1,4 @@
-<div class="width--full height--full" layout-fill>
-  <md-content class="background height--full" layout="column" layout-align="center center">
+  <md-content class="background height--full width--full" layout="column" layout-align="center center">
 
     <div>
       <img src="img/mughub_logo.png" width="210px" />
@@ -18,7 +17,7 @@
 
         <md-tab label="TUTOR">
           <md-content class="md-padding background auth--animation ng-enter">
-              <login ng-if="$ctrl.showLogin" on-register="$ctrl.toggleRegister()" on-reset="$ctrl.toggleReset()" user-type="TUTOR"></login>
+              <login ng-if="$ctrl.showLogin" on-register="$ctrl.toggleRegister()" on-reset="$ctrl.toggleReset($event)" user-type="TUTOR"></login>
               <register ng-if="$ctrl.showRegister" on-login="$ctrl.toggleRegister()" user-type="TUTOR"></register>
               <reset ng-if="$ctrl.showReset;"></reset>
           </md-content>
@@ -28,4 +27,3 @@
     </div>
 
   </md-content>
-</div>
