@@ -68,6 +68,8 @@ function AuthService(Parse) {
     this.register = function (user) {
         //console.log("User: ", user);
         auth.set("username", user.email);
+        auth.set("firstname", user.firstname);
+        auth.set("lastname", user.lastname);
         auth.set("password", user.password);
         auth.set("email", user.email);
         auth.set("type", user.type)
