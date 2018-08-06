@@ -15,17 +15,20 @@ function AuthController($state) {
 
     function toggleRegister() {
       ctrl.showRegister = !ctrl.showRegister;
-      toggleLogin()
+      ctrl.showLogin = !ctrl.showLogin;
+
     }
 
     function toggleReset(event) {
-      console.log(event);
       ctrl.showReset = !ctrl.showReset;
-      toggleLogin();
+      ctrl.showLogin = !ctrl.showLogin;
+
     }
 
     function toggleLogin() {
       ctrl.showLogin = !ctrl.showLogin;
+      ctrl.showReset = !ctrl.showReset;
+
     }
 
 }
