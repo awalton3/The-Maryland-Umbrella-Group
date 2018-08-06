@@ -50,6 +50,10 @@ md-input-container.auth__input {
   margin-top: 0;
 }
 
+md-input-container.auth__input .md-input {
+  padding-left: 20px !important;
+}
+
 md-tabs.md-no-animation md-tab-content {
   visibility: visible;
   opacity: 1;
