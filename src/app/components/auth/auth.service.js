@@ -131,7 +131,7 @@ function AuthService(Parse, $state) {
             .then(() => {
                 alert('A password reset email has been sent to ' + email);
             })
-            .catch(error => {
+            .catch(err => {
                 alert(err.code + " " + err.message);
             });
     }
