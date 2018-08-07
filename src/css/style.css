@@ -6,24 +6,6 @@
   padding: 0;
 }
 
-body {
-  font-family: 'Montserrat', sans-serif;
-  color: #5c5c5c;
-  background-color: #eaeaea !important;
-}
-
-.background {
-  background-color: #eaeaea !important;
-}
-
-.width--full {
-  width: 100vw !important;
-}
-
-.height--full {
-  height: 100vh !important;
-}
-
 root {
   display: block;
 }
@@ -38,58 +20,134 @@ root .loader {
   font-weight: 900;
 }
 
-/** auth **/
-
-md-input-container.md-input-focused:not([md-no-float]) .md-select-placeholder span:first-child {
-  -webkit-transform: none;
-  transform: none;
+body {
+  font-family: 'Montserrat', sans-serif;
+  color: #5c5c5c;
+  background-color: #eaeaea !important;
 }
 
-md-input-container.auth__input {
+/* removes md-tabs slide animation */
+md-tabs.md-no-animation md-tab-content {
+  transition: none;
+}
+
+/* custom styling for md-tabs ink bar and background ripple color */
+md-tabs.md-default-theme md-ink-bar, md-tabs md-ink-bar {
+  color: #de6600;
+  background-color: #de6600;
+}
+
+/* custom styling for md-tabs active state */
+md-tabs.md-default-theme .md-tab.md-active, md-tabs .md-tab.md-active, md-tabs.md-default-theme .md-tab.md-active md-icon, md-tabs .md-tab.md-active md-icon, md-tabs.md-default-theme .md-tab.md-focused, md-tabs .md-tab.md-focused, md-tabs.md-default-theme .md-tab.md-focused md-icon, md-tabs .md-tab.md-focused md-icon {
+  color: #2b5570;
+  font-weight: bold;
+}
+
+/* helper classes */
+.background {
+  background-color: #eaeaea !important;
+}
+
+.width--full {
+  width: 100vw;
+}
+
+.height--full {
+  height: 100vh;
+}
+
+.text--center {
+  text-align: center;
+}
+
+.text--font {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.position--right {
+  float: right;
+}
+
+.position--left {
+  float: left;
+}
+
+/*************************************** AUTH COMPONENT ***************************************/
+
+md-input-container.auth {
   margin-bottom: 0;
   margin-top: 0;
 }
 
-md-input-container.auth__input .md-input {
-  padding-left: 20px !important;
-  padding-right: 20px !important;
+/* adds padding inside rounded input field */
+md-input-container.auth .md-input {
+  padding: 0px 20px;
 }
 
-md-tabs.md-no-animation md-tab-content {
-  visibility: visible;
-  opacity: 1;
-  transition: visibility 0s linear 0s, opacity 300ms;
+.auth--marginTop {
+  margin-top: 5px;
 }
 
-md-tabs.md-default-theme md-ink-bar, md-tabs md-ink-bar {
-  color: #de6600 !important;
-  background-color: #de6600 !important;
+.auth__label {
+  color:  #eaeaea !important;
+  font-size: 13px;
+  font-family: 'Montserrat', sans-serif;
 }
 
-md-tabs.md-default-theme .md-tab.md-active, md-tabs .md-tab.md-active, md-tabs.md-default-theme .md-tab.md-active md-icon, md-tabs .md-tab.md-active md-icon, md-tabs.md-default-theme .md-tab.md-focused, md-tabs .md-tab.md-focused, md-tabs.md-default-theme .md-tab.md-focused md-icon, md-tabs .md-tab.md-focused md-icon {
-  color: #2b5570 !important;
-  font-weight: bold !important;
+.auth__label--padding {
+  padding: 5px 0px 0px 20px !important;
 }
 
-.auth {
-  min-height: 100vh;
-  /* width: 100%; */
+.auth__label--paddingName {
+  padding: 3px 0px 0px 35px !important;
 }
 
-.auth__tabContainer {}
+.auth__icon {
+  vertical-align: middle;
+  color:#eaeaea;
+  margin:0px 4px 1px 4px;
+}
 
-.auth__tab--color {
-  color: #2b5570 !important;
+.auth__input {
+  background-color: #2b5570 !important;
+  border-radius: 33.5px !important;
+  font-size: 13px;
+  color: white !important;
+}
+
+.auth__input--height {
+  height: 35px !important;
+}
+
+.auth__input--width {
+  width: 284px !important;
+}
+
+.auth__input--widthHalf {
+  width: 137px !important;
+}
+
+.auth__input--borderRadiusFirstName {
+  border-radius: 33.5px 0px 0px 33.5px !important;
+}
+
+.auth__input--borderRadiusLastName{
+  border-radius: 0px 33.5px 33.5px 0px !important;
+}
+
+.auth__reset {
+  position: absolute;
+  float: right;
+  right: 40px;
+  top: 15px;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
 }
 
 .auth__button {
   background-color: #de6600 !important;
-  width: 284px !important;
   border-radius: 33.5px !important;
-}
-
-.auth__listItem--marginTop {
-  margin-top: 5px !important;
 }
 
 .auth__buttonText {
@@ -99,77 +157,13 @@ md-tabs.md-default-theme .md-tab.md-active, md-tabs .md-tab.md-active, md-tabs.m
   color: white;
 }
 
-.auth__input {
-  color: white !important;
-}
-
-.auth__input--style {
-  background-color: #2b5570 !important;
-  border-radius: 33.5px !important;
-  width: 284px !important;
-  font-size: 13px !important;
-  color: white !important;
-  font-family: 'Montserrat', sans-serif !important;
-}
-
-.auth__input--styleNameLeft {
-  text-align: center;
-  background-color: #2b5570 !important;
-  border-radius: 33.5px 0px 0px 33.5px !important;
-  width: 137px !important;
-  font-size: 13px !important;
-  color: white !important;
-  font-family: 'Montserrat', sans-serif !important;
-}
-
-.auth__input--styleNameRight {
-  text-align: center;
-  background-color: #2b5570 !important;
-  border-radius: 0px 33.5px 33.5px 0px !important;
-  width: 137px !important;
-  font-size: 13px !important;
-  color: white !important;
-  font-family: 'Montserrat', sans-serif !important;
-}
-
-.auth__input--height {
-  height: 35px !important;
-}
-
-.auth__input__icon {
-  position: absolute;
-  float: left;
-  top: 10px;
-  left: 12px;
-  font-size: 13px;
-  color: white;
-}
-
-.auth__trans {
+.auth__link {
   cursor: pointer;
   text-align: center;
   font-size: 10pt;
   padding-top: 20px;
   text-decoration: underline;
   color: #8B8C8C
-}
-
-.forgot-button {
-  position: absolute;
-  display: block;
-  top: 0;
-  right: 0;
-  line-height: 0;
-}
-
-.auth__forgot {
-  position: absolute !important;
-  float: right !important;
-  right: 40px !important;
-  top: 15px !important;
-  color: white;
-  font-size: 16px !important;
-  cursor: pointer !important;
 }
 
 /** nav **/
@@ -215,6 +209,10 @@ md-tabs.md-default-theme .md-tab.md-active, md-tabs .md-tab.md-active, md-tabs.m
   -moz-osx-font-smoothing: grayscale;
   /* Support for IE. */
   font-feature-settings: 'liga';
+}
+
+.material-icons.md-16 {
+  font-size: 16px;
 }
 
 .material-icons.md-18 {
