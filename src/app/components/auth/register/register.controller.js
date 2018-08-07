@@ -1,22 +1,28 @@
-function RegisterController(AuthService, $state) {
+function RegisterController() {
     var ctrl = this;
 
-    //initialize user data
     ctrl.$onInit = function () {
+      //define variables
         ctrl.error = null;
         ctrl.user = {
             email: '',
             password: '',
             type: ctrl.userType
         };
+
+      ///define functions
+      ctrl.register = register;
     };
 
-    //creates a new user and allows access into the app
-    ctrl.createUser = function (event) {
-        return AuthService
-            .register(event.user)
-            // .alertVerification(event.user.email)
+    function register(event) {
+      console.log(event.user)
+      ctrl.onRegister({
+        $event: {
+          user: event.user
+        }
+      });
     };
+
 
 }
 
