@@ -13,7 +13,8 @@ var reset = {
     bindings: {
       onLogin: '&',
       userType: '@',
-      userEmail: '<'
+      userEmail: '<',
+      onReset: '&'
     }
 };
 

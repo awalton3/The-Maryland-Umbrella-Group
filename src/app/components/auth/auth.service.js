@@ -119,6 +119,26 @@ function AuthService(Parse, $state) {
 
   /**
    * @ngdoc method
+   * @name AuthService#reset
+   * @methodOf components.auth:AuthService
+   * @param {string} email email entered on authForm
+   */
+
+  this.reset = function(email) {
+    if (email) {
+        Parse.User
+            .requestPasswordReset(email)
+            .then(() => {
+                alert('A password reset email has been sent to ' + email);
+            })
+            .catch(error => {
+                alert(err.code + " " + err.message);
+            });
+    }
+  }
+
+  /**
+   * @ngdoc method
    * @name AuthService#isAuthenticated
    * @methodOf components.auth:AuthService
    * @returns {boolean} returns whether user is authenticated based on sessionStorage

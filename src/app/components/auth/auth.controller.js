@@ -13,6 +13,7 @@ function AuthController(AuthService) {
     ctrl.toggleLogin = toggleLogin;
     ctrl.register = register;
     ctrl.login = login;
+    ctrl.reset = reset;
   }
 
   function toggleRegister() {
@@ -37,6 +38,10 @@ function AuthController(AuthService) {
 
   function login(event) {
     return AuthService.login(event.user)
+  }
+
+  function reset(email) {
+    return AuthService.reset(email)
   }
 
 }

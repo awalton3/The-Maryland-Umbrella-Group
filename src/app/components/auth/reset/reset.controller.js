@@ -9,21 +9,13 @@ function ResetController() {
         ctrl.reset = reset;
     }
 
-    // password reset
-    function reset(email) {
-        if (email) {
-            Parse
-                .User
-                .requestPasswordReset(email)
-                .then(function () {
-                    alert('A password reset email has been sent to ' + email);
-                })
-                .catch(function (err) {
-                    alert(err.code + " " + err.message);
-                });
-        }
-    }
-
+    // function reset() {
+    //   ctrl.onReset({
+    //     $event: {
+    //       email: ctrl.userEmail;
+    //     }
+    //   });
+    // }
 }
 
 angular

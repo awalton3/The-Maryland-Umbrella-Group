@@ -1,29 +1,29 @@
-  <md-content class="background height--full width--full" layout="column" layout-align="center center">
+<md-content class="background height--full width--full" layout="column" layout-align="center center">
 
-    <div>
-      <img src="img/mughub_logo.png" width="200px" />
-    </div>
+  <div>
+    <img src="img/mughub_logo.png" width="200px" />
+  </div>
 
-    <div class="width--full auth--animation ng-enter" style="margin-top: -30px;">
-      <md-tabs class="width--full md-no-animation" md-center-tabs="true" md-dynamic-height>
+  <div class="width--full auth--animation ng-enter" style="margin-top: -30px;">
+    <md-tabs class="width--full md-no-animation" md-center-tabs="true" md-dynamic-height>
 
-        <md-tab label="STUDENT">
-          <md-content class="background auth--animation ng-enter">
-              <login ng-if="$ctrl.showLogin" on-login="$ctrl.login($event)" on-register="$ctrl.toggleRegister()" on-reset="$ctrl.toggleReset($event)" user-type="STUDENT"></login>
-              <register ng-if="$ctrl.showRegister" on-register="$ctrl.register($event)" on-login="$ctrl.toggleRegister()" user-type="STUDENT"></register>
-              <reset ng-if="$ctrl.showReset" on-login="$ctrl.toggleLogin()" user-type="STUDENT" user-email="$ctrl.userEmail"></reset>
-          </md-content>
-        </md-tab>
+      <md-tab label="STUDENT">
+        <md-content class="background auth--animation ng-enter">
+          <login ng-if="$ctrl.showLogin" on-login="$ctrl.login($event)" on-register="$ctrl.toggleRegister()" on-reset="$ctrl.toggleReset($event)" user-type="STUDENT"></login>
+          <register ng-if="$ctrl.showRegister" on-register="$ctrl.register($event)" on-login="$ctrl.toggleRegister()" user-type="STUDENT"></register>
+          <reset ng-if="$ctrl.showReset" on-reset="$ctrl.reset($ctrl.userEmail)" on-login="$ctrl.toggleLogin()" user-type="STUDENT" user-email="$ctrl.userEmail"></reset>
+        </md-content>
+      </md-tab>
 
-        <md-tab label="TUTOR">
-          <md-content class="background auth--animation ng-enter">
-              <login ng-if="$ctrl.showLogin" on-login="$ctrl.login($event)" on-register="$ctrl.toggleRegister()" on-reset="$ctrl.toggleReset($event)" user-type="TUTOR"></login>
-              <register ng-if="$ctrl.showRegister" on-register="$ctrl.register($event)" on-login="$ctrl.toggleRegister()" user-type="TUTOR"></register>
-              <reset ng-if="$ctrl.showReset" on-login="$ctrl.toggleLogin()" user-type="TUTOR"  user-email="$ctrl.userEmail"></reset>
-          </md-content>
-        </md-tab>
+      <md-tab label="TUTOR">
+        <md-content class="background auth--animation ng-enter">
+          <login ng-if="$ctrl.showLogin" on-login="$ctrl.login($event)" on-register="$ctrl.toggleRegister()" on-reset="$ctrl.toggleReset($event)" user-type="TUTOR"></login>
+          <register ng-if="$ctrl.showRegister" on-register="$ctrl.register($event)" on-login="$ctrl.toggleRegister()" user-type="TUTOR"></register>
+          <reset ng-if="$ctrl.showReset" on-reset="$ctrl.reset($ctrl.userEmail)" on-login="$ctrl.toggleLogin()" user-type="TUTOR" user-email="$ctrl.userEmail"></reset>
+        </md-content>
+      </md-tab>
 
-      </md-tabs>
-    </div>
+    </md-tabs>
+  </div>
 
-  </md-content>
+</md-content>
