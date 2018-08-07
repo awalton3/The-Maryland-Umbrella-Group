@@ -1,13 +1,13 @@
 <div layout="column" layout-align="center" class="auth--animation">
+  <div>
+    <auth-form user="$ctrl.user" user-type="$ctrl.userType" button="Login" on-submit="$ctrl.login($event);" on-reset="$ctrl.reset($event)">
+    </auth-form>
+  </div>
+  <center>
     <div>
-        <auth-form user="$ctrl.user" user-type="$ctrl.userType" button="Login" on-submit="$ctrl.loginUser($event);" on-reset="$ctrl.reset($event)">
-        </auth-form>
-    </div>
-    <center>
-        <div>
-            <a ng-click="$ctrl.onRegister($event)" class="auth__link">
+      <a ng-click="$ctrl.onRegister($event)" class="auth__link">
       Don't have an account? Create one here.
     </a>
-        </div>
-    </center>
+    </div>
+  </center>
 </div>

@@ -1,4 +1,4 @@
-function AuthController(AuthService, $state) {
+function AuthController(AuthService) {
   var ctrl = this;
 
   ctrl.$onInit = function() {
@@ -12,6 +12,7 @@ function AuthController(AuthService, $state) {
     ctrl.toggleReset = toggleReset;
     ctrl.toggleLogin = toggleLogin;
     ctrl.register = register;
+    ctrl.login = login;
   }
 
   function toggleRegister() {
@@ -31,8 +32,11 @@ function AuthController(AuthService, $state) {
   }
 
   function register(event) {
-    return AuthService
-      .register(event.user)
+    return AuthService.register(event.user)
+  }
+
+  function login(event) {
+    return AuthService.login(event.user)
   }
 
 }

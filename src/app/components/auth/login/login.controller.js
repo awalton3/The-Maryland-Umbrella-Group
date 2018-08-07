@@ -3,21 +3,27 @@ function LoginController(AuthService, $state) {
 
   //initialize user data
   ctrl.$onInit = function() {
-    ctrl.user = {
-      email: '',
-      password: '',
-      type: ctrl.userType
-    };
+    //define variables
+      ctrl.user = {
+          email: '',
+          password: '',
+          type: ctrl.userType
+      };
+
+    ///define functions
+    ctrl.login = login;
+    ctrl.reset = reset;
   };
 
-  //give user access to app
-  ctrl.loginUser = function (event) {
-      return AuthService
-          .login(event.user)
-  }
+  function login(event) {
+    ctrl.onLogin({
+      $event: {
+        user: event.user
+      }
+    });
+  };
 
-  ctrl.reset = function(event) {
-    console.log(event.email)
+  function reset(event) {
     ctrl.onReset({
       $event: {
         email: event.email

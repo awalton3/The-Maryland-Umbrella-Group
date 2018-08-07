@@ -4,7 +4,8 @@ var login = {
     bindings: {
       userType: '@',
       onRegister: '&',
-      onReset: '&'
+      onReset: '&',
+      onLogin: '&'
     }
 };
 

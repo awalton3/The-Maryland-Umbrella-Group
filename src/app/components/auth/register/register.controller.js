@@ -15,7 +15,6 @@ function RegisterController() {
     };
 
     function register(event) {
-      console.log(event.user)
       ctrl.onRegister({
         $event: {
           user: event.user
