@@ -16,7 +16,6 @@ function AuthController($state) {
     function toggleRegister() {
       ctrl.showRegister = !ctrl.showRegister;
       ctrl.showLogin = !ctrl.showLogin;
-
     }
 
     function toggleReset(event) {
@@ -28,10 +27,9 @@ function AuthController($state) {
     function toggleLogin() {
       ctrl.showLogin = !ctrl.showLogin;
       ctrl.showReset = !ctrl.showReset;
-
     }
 
-    
+
 
 }
 

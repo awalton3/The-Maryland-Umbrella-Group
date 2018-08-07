@@ -36,7 +36,7 @@
           <label style="color:  #eaeaea; font-size: 13px; font-family: 'Montserrat', sans-serif; padding: 5px 0px 0px 20px"><i style="vertical-align: middle; color:#eaeaea; margin:0px 4px" class="material-icons md-18">lock</i>PASSWORD</label>
           <input class="auth__input--style auth__input--height" type="password" name="password" ng-model="$ctrl.user.password" autocomplete="off" />
         </md-input-container>
-        <p ng-if="$ctrl.button === 'Login'" ng-click="$ctrl.reset($event)" class="auth__forgot">?</p>
+        <p ng-if="$ctrl.button === 'Login'" ng-click="$ctrl.reset()" class="auth__forgot">?</p>
       </md-list-item>
     </div>
 

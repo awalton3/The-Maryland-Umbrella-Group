@@ -3,7 +3,6 @@ function ResetController() {
     var ctrl = this;
 
     ctrl.$onInit = function () {
-      console.log("RESET CONTROLLER FIRED")
         // initialize variables
         ctrl.user = {};
         // initialize functions

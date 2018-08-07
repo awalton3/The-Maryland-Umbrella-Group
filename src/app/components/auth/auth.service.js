@@ -69,7 +69,6 @@ function AuthService(Parse, $state) {
    */
 
   this.register = function(user) {
-    //console.log("User: ", user);
     auth.set("username", user.email);
     auth.set("firstname", user.firstname);
     auth.set("lastname", user.lastname);
