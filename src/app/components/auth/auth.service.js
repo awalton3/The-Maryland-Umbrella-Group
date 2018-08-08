@@ -8,6 +8,9 @@
 function AuthService(Parse, $state) {
   var auth = new Parse.User(); // creates a new user in Parse
   var currentUser = null; //holds info about current user
+  // var isLogin = false; //sends signal to controller on whether to route to login tab
+
+  //this.isLogin = false;
 
   /**
    * @ngdoc method
@@ -117,25 +120,17 @@ function AuthService(Parse, $state) {
     });
   }
 
-  /**
-   * @ngdoc method
-   * @name AuthService#reset
-   * @methodOf components.auth:AuthService
-   * @param {string} email email entered on authForm
-   */
-
-  this.reset = function(email) {
-    if (email) {
-        Parse.User
-            .requestPasswordReset(email)
-            .then(() => {
-                alert('A password reset email has been sent to ' + email);
-            })
-            .catch(err => {
-                alert(err.code + " " + err.message);
-            });
-    }
-  }
+  // /**
+  //  * @ngdoc method
+  //  * @name AuthService#reset
+  //  * @methodOf components.auth:AuthService
+  //  * @param {string} email email entered on authForm
+  //  */
+  //
+  // this.reset = function(email) {
+  //   Parse.User
+  //     .requestPasswordReset(email)
+  // }
 
   /**
    * @ngdoc method

@@ -40,10 +40,20 @@ function AuthController(AuthService) {
     return AuthService.login(event.user)
   }
 
+//TODO put logic in AuthService
   function reset(email) {
-    return AuthService.reset(email)
+    if (email) {
+      Parse.User
+        .requestPasswordReset(email)
+        .then(() => {
+          alert('A password reset email has been sent to ' + email);
+          toggleLogin();
+        })
+        .catch(err => {
+          alert(err.code + " " + err.message);
+        });
+    }
   }
-
 }
 
 angular
