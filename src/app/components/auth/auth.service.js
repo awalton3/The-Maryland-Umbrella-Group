@@ -79,15 +79,6 @@ function AuthService(Parse, $state) {
     auth.set("email", user.email);
     auth.set("type", user.type)
     return auth
-      .signUp(null)
-      .then(() => {
-        alert("A verfication email has been sent to " + user.email)
-        this.logout()
-          .then(() => {
-            $state.go('auth.login')
-          })
-      })
-      .catch(error => alert(error))
   };
 
   /**

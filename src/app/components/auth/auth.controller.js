@@ -32,15 +32,24 @@ function AuthController(AuthService) {
     ctrl.showReset = !ctrl.showReset;
   }
 
-  function register(event) {
-    return AuthService.register(event.user)
-  }
-
   function login(event) {
     return AuthService.login(event.user)
   }
 
-//TODO put logic in AuthService
+  function register(event) {
+    return AuthService.register(event.user)
+      .signUp(null)
+      .then(() => {
+        alert("A verfication email has been sent to " + event.user.email)
+        return AuthService.logout()
+          .then(() => {
+            toggleRegister();
+          })
+      })
+      .catch(error => alert(error))
+  }
+
+  //TODO put logic in AuthService
   function reset(email) {
     if (email) {
       Parse.User
