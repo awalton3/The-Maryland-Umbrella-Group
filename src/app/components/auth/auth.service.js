@@ -52,7 +52,11 @@ function AuthService(Parse, $state) {
       .then(user => {
         if (user.attributes.emailVerified && user.attributes.type === userType) {
           storeAuthData()
-          $state.go('app')
+          if (userType === 'STUDENT') {
+            $state.go('student-app')
+          } else {
+            $state.go('tutor-app')
+          }
         } else {
           this.logout()
             .then(() => {
@@ -111,18 +115,6 @@ function AuthService(Parse, $state) {
     });
   }
 
-  // /**
-  //  * @ngdoc method
-  //  * @name AuthService#reset
-  //  * @methodOf components.auth:AuthService
-  //  * @param {string} email email entered on authForm
-  //  */
-  //
-  // this.reset = function(email) {
-  //   Parse.User
-  //     .requestPasswordReset(email)
-  // }
-
   /**
    * @ngdoc method
    * @name AuthService#isAuthenticated
@@ -131,8 +123,8 @@ function AuthService(Parse, $state) {
    */
 
   this.isAuthenticated = function() {
-    // return !!(Parse.User.current() && Parse.User.current()
-    //     .authenticated());
+    return !!(Parse.User.current() && Parse.User.current()
+      .authenticated());
   };
 
   /**
@@ -147,6 +139,7 @@ function AuthService(Parse, $state) {
       return auth;
     }
   };
+
 };
 
 angular

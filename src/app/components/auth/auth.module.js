@@ -25,7 +25,8 @@ angular
         ParseProvider.serverURL = 'https://parseapi.back4app.com/';
 
     })
-    .run(function ($transitions, $state, AuthService) {
+    .run(function ($transitions, $state, AuthService, $rootScope) {
+        $rootScope.currentUser = Parse.User.current();
         $transitions.onStart({
             to: function (state) {
                 return !!(state.data && state.data.requiredAuth);
@@ -41,7 +42,11 @@ angular
             to: 'auth'
         }, function () {
             if (AuthService.isAuthenticated()) {
-                return $state.go('app');
+                if ($rootScope.currentUser.attributes.type === 'STUDENT') {
+                  return $state.go('student-app');
+                } else {
+                  return $state.go('tutor-app');
+                }
             }
         });
     });
