@@ -1,4 +1,4 @@
-function TutorAppController(AuthService, $state) {
+function StudentAppController(AuthService, $state) {
     var ctrl = this;
     ctrl.user = AuthService.getUser();
     ctrl.logout = function () {
@@ -11,4 +11,4 @@ function TutorAppController(AuthService, $state) {
 
 angular
     .module('common')
-    .controller('TutorAppController', TutorAppController);
+    .controller('StudentAppController', StudentAppController);
