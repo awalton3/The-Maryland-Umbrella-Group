@@ -53,9 +53,13 @@ function AuthService(Parse, $state) {
         if (user.attributes.emailVerified && user.attributes.type === userType) {
           storeAuthData()
           if (userType === 'STUDENT') {
-            $state.go('student-app')
+            $state.go('student-app', {
+              userType: userType
+            })
           } else {
-            $state.go('tutor-app')
+            $state.go('tutor-app', {
+              userType: userType
+            })
           }
         } else {
           this.logout()

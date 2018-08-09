@@ -16,12 +16,16 @@ angular
         },
         component: 'tutorApp',
         resolve: {
-          authenticated: ['$q', '$rootScope', function($q, $rootScope) {
+          authorization: ['$q', '$rootScope', function($q, $rootScope) {
             var deferred = $q.defer();
-            if ($rootScope.currentUser.attributes.type === 'TUTOR') {
-              deferred.resolve();
+            if ($rootScope.currentUser !== null) {
+              if ($rootScope.currentUser.attributes.type === 'TUTOR') {
+                deferred.resolve();
+              } else {
+                deferred.reject('You are not authorized to visit this page');
+              }
             } else {
-              deferred.reject('You are not authorized to visit this page');
+              deferred.resolve();
             }
             return deferred.promise;
           }]
