@@ -1,6 +1,13 @@
 var studentApp = {
   templateUrl: './student-app.html',
-  controller: 'StudentAppController'
+  controller: 'StudentAppController',
+  resolve: {
+    isAuthenticated: ['$q', function($q) {
+      if ( /*user is not admin*/ ) {
+        return $q.reject("Not Authorized");
+      }
+    }]
+  }
 };
 
 angular
@@ -14,17 +21,6 @@ angular
         data: {
           requiredAuth: true
         },
-        component: 'studentApp',
-        resolve: {
-          authenticated: ['$q', '$rootScope', function($q, $rootScope) {
-            var deferred = $q.defer();
-            if ($rootScope.currentUser.attributes.type === 'STUDENT') {
-              deferred.resolve();
-            } else {
-              deferred.reject('You are not authorized to visit this page');
-            }
-            return deferred.promise;
-          }]
-        }
+        component: 'studentApp'
       })
   });

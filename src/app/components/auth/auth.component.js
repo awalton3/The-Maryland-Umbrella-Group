@@ -8,6 +8,11 @@ angular
     .component('auth', auth)
     .config(function ($stateProvider, $urlRouterProvider) {
         $stateProvider
+            // .state('auth', {
+            //     redirectTo: 'auth',
+            //     url: '/auth',
+            //     templateUrl: './auth.html'
+            // })
             .state('auth', {
                 url: '/auth',
                 component: 'auth'
