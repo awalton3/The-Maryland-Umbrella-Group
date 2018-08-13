@@ -177,9 +177,9 @@ md-input-container.auth .md-input {
 /*************************************** LEFT SIDE-NAV ***************************************/
 
 md-sidenav.sideNavLeft--width {
-  width: 230px !important;
-  min-width: 230px !important;
-  max-width: 230px !important;
+  width: 270px !important;
+  min-width: 270px !important;
+  max-width: 270px !important;
 }
 
 
