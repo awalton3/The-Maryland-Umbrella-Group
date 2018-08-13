@@ -52,6 +52,10 @@ md-tabs.md-default-theme .md-tab.md-active, md-tabs .md-tab.md-active, md-tabs.m
   background-color: #263f4e !important;
 }
 
+.background--mainColor {
+  background-color: #2b5570 !important;
+}
+
 .width--full {
   width: 100vw !important;
 }
@@ -64,12 +68,24 @@ md-tabs.md-default-theme .md-tab.md-active, md-tabs .md-tab.md-active, md-tabs.m
   text-align: center !important;
 }
 
+.text--left {
+  text-align: left !important;
+}
+
+.text--right {
+  text-align: right !important;
+}
+
 .text--font {
   font-family: 'Montserrat', sans-serif !important;
 }
 
 .text--weightBold {
   font-weight: bold !important;
+}
+
+.text--upperCase {
+  text-transform: uppercase !important;
 }
 
 .position--right {
@@ -177,12 +193,28 @@ md-input-container.auth .md-input {
 /*************************************** LEFT SIDE-NAV ***************************************/
 
 md-sidenav.sideNavLeft--width {
+  width: 230px !important;
+  min-width: 230px !important;
+  max-width: 230px !important;
+}
+
+.sideNavLeft__userCard {
+  height: 75px;
+  margin: 8px 0px;
+}
+
+.sideNavLeft__options {
+  margin: 7px 0px;
+  width: 100%;
+}
+
+/*************************************** RIGHT SIDE-NAV ***************************************/
+
+md-sidenav.sideNavRight--width {
   width: 270px !important;
   min-width: 270px !important;
   max-width: 270px !important;
 }
-
-
 
 @font-face {
   font-family: 'Material Icons';
@@ -218,27 +250,35 @@ md-sidenav.sideNavLeft--width {
   font-feature-settings: 'liga';
 }
 
-.material-icons.md-16 {
+.md-12 {
+  font-size: 12px;
+}
+
+.md-14 {
+  font-size: 14px;
+}
+
+.md-16 {
   font-size: 16px;
 }
 
-.material-icons.md-18 {
+.md-18 {
   font-size: 18px;
 }
 
-.material-icons.md-22 {
+.md-22 {
   font-size: 22px;
 }
 
-.material-icons.md-24 {
+.md-24 {
   font-size: 24px;
 }
 
-.material-icons.md-36 {
+.md-36 {
   font-size: 36px;
 }
 
-.material-icons.md-48 {
+.md-48 {
   font-size: 48px;
 }
 
