@@ -1,5 +1,47 @@
-<div class="height--full">
-  <md-toolbar class="md-scroll-shrink background">
+<!-- <div class="height--full"> -->
+
+<section layout="row" flex>
+
+    <md-sidenav class="md-sidenav-left" md-component-id="left"
+                md-disable-backdrop md-whiteframe="4">
+
+      <md-toolbar class="md-theme-indigo">
+        <h1 class="md-toolbar-tools">Disabled Backdrop</h1>
+      </md-toolbar>
+
+      <md-content layout-margin>
+        <p>
+          This sidenav is not showing any backdrop, where users can click on it, to close the sidenav.
+        </p>
+        <md-button ng-click="$ctrl.toggleLeft('left')" class="md-accent">
+          Close this Sidenav
+        </md-button>
+      </md-content>
+
+    </md-sidenav>
+
+    <md-content flex layout-padding>
+
+      <div layout="column" layout-align="top center">
+        <p>
+          Developers can also disable the backdrop of the sidenav.<br/>
+          This will disable the functionality to click outside to close the sidenav.
+        </p>
+
+        <div>
+          <md-button ng-click="$ctrl.toggleLeft('left')" class="md-raised">
+            Toggle Sidenav
+          </md-button>
+        </div>
+
+      </div>
+
+    </md-content>
+
+  </section>
+
+
+  <!-- <md-toolbar class="md-scroll-shrink background">
     <div class="md-toolbar-tools" layout="row" layout-align="space-between center">
       <div>
         <md-button class="md-icon-button">
@@ -7,16 +49,22 @@
         </md-button>
       </div>
       <div>
-        <h1 style="color: #263f4e; font-weight: bold">UPLOADS</h1>
+        <h1 style="color: #2b5570; font-weight: bold">UPLOADS</h1>
       </div>
       <div>
         <md-button class="md-icon-button">
-          <i style="color: #263f4e" class="material-icons">group</i>
+          <i style="color: #2b5570" class="material-icons">group</i>
         </md-button>
       </div>
     </div>
   </md-toolbar>
+
   <md-content class="background" flex>
-    
-  </md-content>
-</div>
+    <p>
+      Hello
+    </p>
+  </md-content> -->
+
+
+
+<!-- </div> -->
