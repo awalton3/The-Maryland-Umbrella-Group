@@ -166,15 +166,12 @@ md-input-container.auth .md-input {
   color: #8B8C8C
 }
 
-/** nav **/
+/*************************************** LEFT SIDE-NAV ***************************************/
 
-.nav {
-  background-color: rgb(250, 250, 250);
-}
-
-.nav_text {
-  font-size: 12pt;
-  color: grey;
+md-sidenav.sideNavLeft--width {
+  width: 270px !important;
+  min-width: 270px !important;
+  max-width: 270px !important;
 }
 
 @font-face {

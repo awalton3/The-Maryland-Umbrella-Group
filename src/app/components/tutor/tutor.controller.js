@@ -4,6 +4,7 @@ function TutorController($mdSidenav) {
   ctrl.$onInit = function() {
     //define variables
     ctrl.toggleLeft = buildToggler('left')
+    ctrl.isNavLocked = true;
 
     //define functions
     ctrl.buildToggler = buildToggler;
