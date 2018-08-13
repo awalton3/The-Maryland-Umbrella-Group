@@ -48,8 +48,12 @@ md-tabs.md-default-theme .md-tab.md-active, md-tabs .md-tab.md-active, md-tabs.m
   background-color: #eaeaea !important;
 }
 
+.background--baseColor {
+  background-color: #263f4e !important;
+}
+
 .width--full {
-  width: 100vw;
+  width: 100vw !important;
 }
 
 .height--full {
@@ -57,19 +61,23 @@ md-tabs.md-default-theme .md-tab.md-active, md-tabs .md-tab.md-active, md-tabs.m
 }
 
 .text--center {
-  text-align: center;
+  text-align: center !important;
 }
 
 .text--font {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Montserrat', sans-serif !important;
+}
+
+.text--weightBold {
+  font-weight: bold !important;
 }
 
 .position--right {
-  float: right;
+  float: right !important;
 }
 
 .position--left {
-  float: left;
+  float: left !important;
 }
 
 /*************************************** AUTH COMPONENT ***************************************/
@@ -169,10 +177,12 @@ md-input-container.auth .md-input {
 /*************************************** LEFT SIDE-NAV ***************************************/
 
 md-sidenav.sideNavLeft--width {
-  width: 270px !important;
-  min-width: 270px !important;
-  max-width: 270px !important;
+  width: 230px !important;
+  min-width: 230px !important;
+  max-width: 230px !important;
 }
+
+
 
 @font-face {
   font-family: 'Material Icons';

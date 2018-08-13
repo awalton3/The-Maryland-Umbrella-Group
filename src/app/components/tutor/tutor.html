@@ -1,17 +1,14 @@
 <div layout="row" flex>
-  <md-sidenav class="md-sidenav-left sideNavLeft--width height--full" md-component-id="left" md-disable-backdrop md-whiteframe="4" md-is-locked-open="!$ctrl.isLeftNavLocked && $mdMedia('gt-sm')" flex>
+  <md-sidenav class="md-sidenav-left sideNavLeft--width height--full" md-component-id="left" md-whiteframe="4" flex>
 
     <md-toolbar class="md-theme-indigo">
-      <h1 class="md-toolbar-tools">Disabled Backdrop</h1>
+      <h1 class="md-toolbar-tools">Left SideNav</h1>
     </md-toolbar>
 
     <md-content layout-margin>
       <p>
-        This sidenav is not showing any backdrop, where users can click on it, to close the sidenav.
+        This will be the main navigation.
       </p>
-      <md-button ng-click="$ctrl.toggleNavs()" class="md-accent">
-        Close this Sidenav
-      </md-button>
     </md-content>
 
   </md-sidenav>
@@ -21,7 +18,7 @@
     <md-toolbar class="md-scroll-shrink background" flex>
       <div class="md-toolbar-tools" layout="row" layout-align="space-between center">
         <div>
-          <md-button ng-click="$ctrl.toggleLeft('left')" class="md-icon-button">
+          <md-button ng-click="$ctrl.toggleLeft()" class="md-icon-button">
             <img src="img/notes.svg" />
           </md-button>
         </div>
@@ -29,7 +26,7 @@
           <h1 style="color: #2b5570; font-weight: bold">UPLOADS</h1>
         </div>
         <div>
-          <md-button ng-click="$ctrl.toggleRight('right')"  class="md-icon-button">
+          <md-button ng-click="" class="md-icon-button">
             <i style="color: #2b5570" class="material-icons">group</i>
           </md-button>
         </div>
@@ -44,19 +41,16 @@
 
   </md-content>
 
-  <md-sidenav class="md-sidenav-right md-whiteframe-4dp sideNavLeft--width height--full" md-component-id="right" md-disable-backdrop md-is-locked-open="$ctrl.isLeftNavLocked && $mdMedia('gt-sm')" flex>
+  <md-sidenav class="md-sidenav-right sideNavLeft--width height--full background--baseColor" md-component-id="right" md-disable-backdrop md-is-locked-open="$mdMedia('gt-sm')" md-whiteframe="3" flex>
 
-    <md-toolbar class="md-theme-indigo">
-      <h1 class="md-toolbar-tools">Disabled Backdrop</h1>
+    <md-toolbar class="md-scroll-shrink background--baseColor" flex>
+      <h1 layout="row" layout-align="center center" class="md-toolbar-tools text--center text--weightBold">STUDENTS</h1>
     </md-toolbar>
 
-    <md-content layout-margin>
+    <md-content class="background--baseColor" layout-margin>
       <p>
-        This sidenav is not showing any backdrop, where users can click on it, to close the sidenav.
+        This will be the tutor's student contact list.
       </p>
-      <md-button ng-click="$ctrl.toggleNavs()" class="md-accent">
-        Close this Sidenav
-      </md-button>
     </md-content>
 
   </md-sidenav>

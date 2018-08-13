@@ -5,7 +5,7 @@ function TutorController($mdSidenav) {
     //define variables
     ctrl.toggleLeft = buildToggler('left');
     ctrl.toggleRight = buildToggler('right');
-    ctrl.isLeftNavLocked = true;
+    ctrl.isRightNavLocked = true;
 
     //define functions
     ctrl.buildToggler = buildToggler;
@@ -19,8 +19,9 @@ function TutorController($mdSidenav) {
     };
   }
 
-  function toggleNavs() {
-    ctrl.isLeftNavLocked = !ctrl.isLeftNavLocked;
+  function toggleNavs(componentId) {
+    ctrl.isRightNavLocked = !ctrl.isRightNavLocked;
+    buildToggler(componentId);
   }
 }
 
