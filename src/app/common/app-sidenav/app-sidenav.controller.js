@@ -1,8 +1,9 @@
-function AppSidenavController(AuthService, $state) {
+function AppSidenavController(AuthService, $state, $rootScope) {
   var ctrl = this;
 
   ctrl.$onInit = function() {
     //define variables
+    ctrl.user = $rootScope.currentUser;
     //define functions
     ctrl.logout = logout;
   }

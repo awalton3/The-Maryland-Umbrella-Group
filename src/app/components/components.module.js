@@ -3,5 +3,5 @@ angular
     'components.auth',
     'components.memos',
     'components.student',
-    'components.tutor'
+    'components.uploads'
   ])

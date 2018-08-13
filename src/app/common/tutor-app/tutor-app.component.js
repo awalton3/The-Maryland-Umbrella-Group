@@ -9,7 +9,7 @@ angular
   .config(function($stateProvider) {
     $stateProvider
       .state('tutor-app', {
-        redirectTo: 'tutor',
+        redirectTo: 'uploads',
         url: '/',
         data: {
           requiredAuth: true

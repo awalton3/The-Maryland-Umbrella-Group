@@ -1,9 +1,6 @@
 var appSidenav = {
   templateUrl: './app-sidenav.html',
-  controller: 'AppSidenavController',
-  bindings: {
-    user: '<'
-  }
+  controller: 'AppSidenavController'
 };
 
 angular

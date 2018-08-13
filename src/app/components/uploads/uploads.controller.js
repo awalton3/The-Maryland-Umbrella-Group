@@ -1,4 +1,4 @@
-function TutorController($mdSidenav, $rootScope) {
+function UploadsController($mdSidenav, $rootScope) {
 
   var ctrl = this;
   ctrl.$onInit = function() {
@@ -27,5 +27,5 @@ function TutorController($mdSidenav, $rootScope) {
 }
 
 angular
-  .module('components.tutor')
-  .controller('TutorController', TutorController);
+  .module('components.uploads')
+  .controller('UploadsController', UploadsController);
