@@ -1,5 +1,8 @@
 var appSidenav = {
-  templateUrl: './app-sidenav.html'
+  templateUrl: './app-sidenav.html',
+  bindings: {
+    user: '<'
+  }
 };
 
 angular

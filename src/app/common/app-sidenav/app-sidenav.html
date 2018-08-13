@@ -1,9 +1,5 @@
 <md-sidenav class="md-sidenav-left sideNavLeft--width height--full background--baseColor" md-component-id="left" md-whiteframe="4" flex>
 
-  <!-- <md-toolbar class="md-theme-indigo">
-    <h1 class="md-toolbar-tools">Left SideNav</h1>
-  </md-toolbar> -->
-
   <md-content class="background--baseColor">
     <md-card class="background sideNavLeft__userCard">
       <md-card-title layout="row" layout-align="space-around center">
@@ -11,15 +7,21 @@
           <img src="img/mughub__logoicon.png" width="60px" />
         </div>
         <div>
-          <p style="color: #2b5570" class="text--right text--weightBold text--upperCase md-body-1">Ana Walton</p>
-          <p style="color: #2b5570" class="text--right text--upperCase md-caption">Tutor</p>
+          <p style="color: #2b5570" class="text--right text--weightBold text--upperCase md-body-1">{{ $ctrl.user.attributes.firstname }} {{ $ctrl.user.attributes.lastname }}</p>
+          <p style="color: #2b5570" class="text--right text--upperCase md-caption">{{ $ctrl.user.attributes.type }}</p>
         </div>
       </md-card-title>
     </md-card>
     <div layout="column" layout-align="center center">
-      <md-list-item ng-click="$ctrl.function()" md-ink-ripple="#2b5570" class="sideNavLeft__options"><p style="color: #eaeaea" class="text--center text--weightBold text--upperCase">UPLOADS</p></md-list-item>
-      <md-list-item ng-click="$ctrl.function()" md-ink-ripple="#2b5570" class="sideNavLeft__options"><p style="color: #eaeaea"  class="text--center text--weightBold text--upperCase">HOUR LOG</p></md-list-item>
-      <md-list-item ng-click="$ctrl.function()" md-ink-ripple="#2b5570" class="sideNavLeft__options" flex><p style="color: #de6600" class="text--center text--weightBold text--upperCase">LOGOUT</p></md-list-item>
+      <md-list-item ng-click="$ctrl.function()" md-ink-ripple="#2b5570" class="sideNavLeft__options">
+        <p style="color: #eaeaea" class="text--center text--weightBold text--upperCase">UPLOADS</p>
+      </md-list-item>
+      <md-list-item ng-click="$ctrl.function()" md-ink-ripple="#2b5570" class="sideNavLeft__options">
+        <p style="color: #eaeaea" class="text--center text--weightBold text--upperCase">HOUR LOG</p>
+      </md-list-item>
+      <md-list-item ng-click="$ctrl.function()" md-ink-ripple="#2b5570" class="sideNavLeft__options" flex>
+        <p style="color: #de6600" class="text--center text--weightBold text--upperCase">LOGOUT</p>
+      </md-list-item>
     </div>
   </md-content>
 

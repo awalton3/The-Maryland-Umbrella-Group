@@ -1,4 +1,4 @@
-function TutorController($mdSidenav) {
+function TutorController($mdSidenav, $rootScope) {
 
   var ctrl = this;
   ctrl.$onInit = function() {
@@ -6,6 +6,7 @@ function TutorController($mdSidenav) {
     ctrl.toggleLeft = buildToggler('left');
     ctrl.toggleRight = buildToggler('right');
     ctrl.isRightNavLocked = true;
+    ctrl.user = $rootScope.currentUser;
 
     //define functions
     ctrl.buildToggler = buildToggler;
