@@ -6,6 +6,8 @@ function AppSidenavController(AuthService, $state, $rootScope) {
     ctrl.user = $rootScope.currentUser;
     //define functions
     ctrl.logout = logout;
+    ctrl.goToHourLog = goToHourLog;
+    ctrl.goToUploads = goToUploads;
   }
 
   function logout() {
@@ -14,6 +16,14 @@ function AppSidenavController(AuthService, $state, $rootScope) {
         $state.go('auth');
       });
   };
+
+  function goToHourLog() {
+    $state.go('hours')
+  }
+
+  function goToUploads() {
+    $state.go('uploads')
+  }
 
 }
 

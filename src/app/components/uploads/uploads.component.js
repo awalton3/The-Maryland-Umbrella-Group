@@ -10,7 +10,7 @@ angular
   .config(function($stateProvider) {
     $stateProvider.state('uploads', {
       parent: 'tutor-app',
-      url: 'uploads',
+      url: 'tutor/uploads',
       component: 'uploads'
     })
   });

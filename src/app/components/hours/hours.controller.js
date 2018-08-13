@@ -1,6 +1,6 @@
-function UploadsController($mdSidenav, $rootScope) {
-
+function HoursController($mdSidenav, $rootScope) {
   var ctrl = this;
+
   ctrl.$onInit = function() {
     //define variables
     ctrl.toggleLeft = buildToggler('left');
@@ -23,8 +23,9 @@ function UploadsController($mdSidenav, $rootScope) {
     ctrl.isRightNavLocked = !ctrl.isRightNavLocked;
     buildToggler(componentId);
   }
+
 }
 
 angular
-  .module('components.uploads')
-  .controller('UploadsController', UploadsController);
+  .module('components.hours')
+  .controller('HoursController', HoursController);

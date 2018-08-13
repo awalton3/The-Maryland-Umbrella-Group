@@ -3,5 +3,6 @@ angular
     'components.auth',
     'components.memos',
     'components.student',
-    'components.uploads'
+    'components.uploads',
+    'components.hours'
   ])
