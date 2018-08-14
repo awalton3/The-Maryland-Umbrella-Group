@@ -33,14 +33,6 @@ class UserModel {
                 return Promise.resolve(result);
             }).catch(error => Promise.reject(error));
     }
-    // getByEmail(email) {
-    //     return new this.Parse.Query(this.New()).get(email)
-    //         .then(result => {
-    //             this.Parse.defineAttributes(result, this.fields);
-    //             this.data = result;
-    //             return Promise.resolve(result);
-    //         }).catch(error => Promise.reject(error));
-    // }
 }
 
 angular

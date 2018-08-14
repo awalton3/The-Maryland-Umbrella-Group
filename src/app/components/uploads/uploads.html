@@ -4,23 +4,7 @@
 
   <md-content class="background" flex>
 
-    <md-toolbar class="md-scroll-shrink background" flex>
-      <div class="md-toolbar-tools" layout="row" layout-align="space-between center">
-        <div>
-          <md-button ng-click="$ctrl.toggleLeft()" class="md-icon-button">
-            <img src="img/notes.svg" />
-          </md-button>
-        </div>
-        <div>
-          <h1 class="text--weightBold" style="color: #2b5570">UPLOADS</h1>
-        </div>
-        <div>
-          <md-button ng-click="" class="md-icon-button">
-            <i style="color: #2b5570" class="material-icons">group</i>
-          </md-button>
-        </div>
-      </div>
-    </md-toolbar>
+    <app-nav title="uploads" left-icon="notes" right-icon="group"></app-nav>
 
     <md-content class="background" flex>
       <p>
