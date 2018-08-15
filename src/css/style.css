@@ -56,6 +56,10 @@ md-tabs.md-default-theme .md-tab.md-active, md-tabs .md-tab.md-active, md-tabs.m
   background-color: #2b5570 !important;
 }
 
+.background--highlightColor {
+  background-color: #de6660 !important;
+}
+
 .width--full {
   width: 100vw !important;
 }
@@ -217,18 +221,17 @@ md-sidenav.sideNavRight--width {
 }
 
 .sideNavRight__studentCard {
-  border-radius: 15px 0px 15px 0px;
+  border-radius: 15px 0px 0px 0px;
   height: 75px;
   margin: 8px 20px;
 }
 
 .sideNavRight__studentCard__initials {
   border-radius: 15px 0px 0px 0px;
-  margin-left: -28px;
-  margin-top: -8px;
-  background-color: #de6600;
-  height: 75px;
-  width: 65px;
+  margin-left: -5px;
+  margin-top: -10px;
+  background-color: #e74a59;
+  min-height: 75px;
 }
 
 .sideNavRight__studentCard__initialsText {
@@ -237,6 +240,14 @@ md-sidenav.sideNavRight--width {
   text-align: center;
   font-weight: bold;
   width: 50%;
+}
+
+md-card md-card-title.studentCard__content {
+  padding: 10px 5px 10px;
+}
+
+.studentCard__contentText {
+  margin-left: 10px;
 }
 
 @font-face {
