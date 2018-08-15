@@ -6,7 +6,7 @@ function UploadsController($mdSidenav, $rootScope) {
     ctrl.user = $rootScope.currentUser;
 
     //define functions
-    console.log($rootScope.currentUser.id);
+    console.log($rootScope.currentUser);
   }
 }
 

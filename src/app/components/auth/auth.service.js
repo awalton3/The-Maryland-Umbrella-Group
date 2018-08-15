@@ -22,7 +22,6 @@ function AuthService(Parse, $state, $rootScope) {
 
   function storeAuthData(response) {
     currentUser = response;
-    response = Parse.User.current();
     return currentUser;
   }
 
@@ -52,11 +51,12 @@ function AuthService(Parse, $state, $rootScope) {
       .logIn(user.email, user.password)
       .then(user => {
         if (user.attributes.emailVerified && user.attributes.type === userType) {
+          $rootScope.currentUser = user;
           storeAuthData()
           if (userType === 'STUDENT') {
-            $state.go('student-app')
+            $state.go('student-app');
           } else {
-            $state.go('tutor-app')
+            $state.go('tutor-app');
           }
         } else {
           this.logout()
