@@ -94,7 +94,7 @@ function AuthService(Parse, $state, $rootScope, StudentModel, TutorModel) {
 
   this.addByType = function(user) {
     if (user.attributes.type === 'STUDENT') {
-      return StudentModel.New()
+      return Promise.resolve(StudentModel.New())
         .then(newStudentObject => {
           newStudentObject.set("user", user);
           newStudentObject.save()

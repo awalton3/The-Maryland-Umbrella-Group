@@ -1,4 +1,4 @@
-function UploadsController($mdSidenav, $rootScope) {
+function UploadsController($mdSidenav, $rootScope, TutorModel) {
 
   var ctrl = this;
   ctrl.$onInit = function() {
@@ -6,8 +6,20 @@ function UploadsController($mdSidenav, $rootScope) {
     ctrl.user = $rootScope.currentUser;
 
     //define functions
-    console.log($rootScope.currentUser);
+    ctrl.getStudents = getStudents;
+    getStudents();
+
   }
+
+function getStudents() {
+  return TutorModel.getByUser(ctrl.user).then(parseObject => {
+    console.log("STUDENTS: ", parseObject[0].attributes.students);
+    console.log("Subjects: ", parseObject[0].attributes.subjects);
+  })
+}
+
+
+
 }
 
 angular
