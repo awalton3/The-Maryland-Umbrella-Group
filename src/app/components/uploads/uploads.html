@@ -1,33 +1,34 @@
-<div layout="row" class="auth--animation" flex>
+<div layout="row" layout-align="space-between start" class="auth--animation width--full">
 
   <app-sidenav></app-sidenav>
 
-  <md-content class="background" flex=80>
-
-    <app-nav title="uploads" left-icon="notes" right-icon="group"></app-nav>
-
-    <md-content class="background" flex>
-      <p>
-        Uploads go here.
-      </p>
-    </md-content>
-
-  </md-content>
-
-  <md-content flex=20>
-    <md-sidenav class="md-sidenav-right sideNavLeft--width height--full background--baseColor" md-component-id="right" md-disable-backdrop md-is-locked-open="$mdMedia('gt-sm')" md-whiteframe="3">
-
-      <md-toolbar class="md-scroll-shrink background--baseColor" flex>
-        <h1 layout="row" layout-align="center center" class="md-toolbar-tools text--center text--weightBold">STUDENTS</h1>
-      </md-toolbar>
-
-      <md-content class="background--baseColor" layout-margin>
+  <div class="width--full">
+    <md-content class="background">
+      <app-nav title="uploads" left-icon="notes" right-icon="group"></app-nav>
+      <md-content class="background" flex>
         <p>
-          This will be the tutor's student contact list.
+          Uploads go here.
         </p>
       </md-content>
+    </md-content>
+  </div>
 
-    </md-sidenav>
-  </md-content>
+  <div>
+    <md-content ng-if="!$mdMedia('gt-sm')">
+      <md-sidenav class="md-sidenav-right sideNavLeft--width height--full background--baseColor" md-component-id="right" md-disable-backdrop md-is-locked-open="$mdMedia('gt-sm')" md-whiteframe="3" layout="column">
+
+        <md-toolbar class="md-scroll-shrink background--baseColor" flex>
+          <h1 layout="row" layout-align="center center" class="md-toolbar-tools text--center text--weightBold">STUDENTS</h1>
+        </md-toolbar>
+
+        <md-content class="background--baseColor" layout-margin>
+          <p>
+            This will be the tutor's student contact list.
+          </p>
+        </md-content>
+
+      </md-sidenav>
+    </md-content>
+  </div>
 
 </div>
