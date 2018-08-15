@@ -5,7 +5,7 @@
  * @description Handles authentication for app
  */
 
-function AuthService(Parse, $state, $rootScope) {
+function AuthService(Parse, $state, $rootScope, StudentModel) {
   var auth = new Parse.User(); // creates a new user in Parse
   var currentUser = null; //holds info about current user
   // var isLogin = false; //sends signal to controller on whether to route to login tab
@@ -84,6 +84,7 @@ function AuthService(Parse, $state, $rootScope) {
     auth.set("email", user.email);
     auth.set("type", user.type)
     return auth
+
   };
 
   /**

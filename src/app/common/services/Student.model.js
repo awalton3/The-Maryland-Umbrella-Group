@@ -1,30 +1,29 @@
-class UserModel {
+class StudentModel {
     constructor(Parse) {
         this.Parse = Parse;
         this.data = {};
-        this.name = 'User';
+        this.name = 'Student';
         this.fields = [
             'lastname',
-            'emailVerified',
-            'data',
-            'type',
-            'authData',
-            'username',
             'firstname',
             'password',
-            'email'
+            'email',
+            'tutors',
+            'subjects'
         ];
     }
+
     New(obj) {
         if (angular.isUndefined(obj)) {
             let parseObject = new this.Parse.Object(this.name)
             this.Parse.defineAttributes(parseObject, this.fields);
-            return parseObject;
+            return Promise.resolve(parseObject);
         } else {
             this.Parse.defineAttributes(obj, this.fields);
             return obj;
         }
     }
+
     getById(id) {
         return new this.Parse.Query(this.New()).get(id)
             .then(result => {
@@ -37,4 +36,4 @@ class UserModel {
 
 angular
     .module('common')
-    .service('UserModel', UserModel);
+    .service('StudentModel', StudentModel);

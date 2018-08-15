@@ -1,4 +1,4 @@
-function AuthController(AuthService) {
+function AuthController(AuthService, StudentModel) {
   var ctrl = this;
 
   ctrl.$onInit = function() {
@@ -37,13 +37,26 @@ function AuthController(AuthService) {
   }
 
   function register(event) {
+
     return AuthService.register(event.user)
       .signUp(null)
       .then(() => {
         alert("A verfication email has been sent to " + event.user.email)
         return AuthService.logout()
           .then(() => {
-            toggleRegister();
+            toggleRegister()
+
+            if (event.user.type === 'STUDENT') {
+              return StudentModel.New()
+                .then(parseObject => {
+                  console.log(parseObject)
+                  parseObject.set("firstname", event.user.firstname);
+                  parseObject.set("lastname", event.user.lastname);
+                  parseObject.set("password", event.user.password);
+                  parseObject.set("email", event.user.email);
+                })
+            }
+
           })
       })
       .catch(error => alert(error))
