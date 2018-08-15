@@ -2,7 +2,7 @@
 
   <app-sidenav></app-sidenav>
 
-  <md-content class="background" flex>
+  <md-content class="background" flex=80>
 
     <app-nav title="uploads" left-icon="notes" right-icon="group"></app-nav>
 
@@ -14,18 +14,20 @@
 
   </md-content>
 
-  <md-sidenav class="md-sidenav-right sideNavLeft--width height--full background--baseColor" md-component-id="right" md-disable-backdrop md-is-locked-open="$mdMedia('gt-sm')" md-whiteframe="3" flex>
+  <md-content flex=20>
+    <md-sidenav class="md-sidenav-right sideNavLeft--width height--full background--baseColor" md-component-id="right" md-disable-backdrop md-is-locked-open="$mdMedia('gt-sm')" md-whiteframe="3">
 
-    <md-toolbar class="md-scroll-shrink background--baseColor" flex>
-      <h1 layout="row" layout-align="center center" class="md-toolbar-tools text--center text--weightBold">STUDENTS</h1>
-    </md-toolbar>
+      <md-toolbar class="md-scroll-shrink background--baseColor" flex>
+        <h1 layout="row" layout-align="center center" class="md-toolbar-tools text--center text--weightBold">STUDENTS</h1>
+      </md-toolbar>
 
-    <md-content class="background--baseColor" layout-margin>
-      <p>
-        This will be the tutor's student contact list.
-      </p>
-    </md-content>
+      <md-content class="background--baseColor" layout-margin>
+        <p>
+          This will be the tutor's student contact list.
+        </p>
+      </md-content>
 
-  </md-sidenav>
+    </md-sidenav>
+  </md-content>
 
 </div>

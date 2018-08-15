@@ -1,4 +1,4 @@
-function AuthController(AuthService, StudentModel) {
+function AuthController(AuthService) {
   var ctrl = this;
 
   ctrl.$onInit = function() {

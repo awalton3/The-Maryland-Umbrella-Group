@@ -48,8 +48,8 @@ function AuthService(Parse, $state, $rootScope, StudentModel, TutorModel) {
       .logIn(user.email, user.password)
       .then(user => {
         if (user.attributes.emailVerified && user.attributes.type === userType) {
-          $rootScope.currentUser = user;
           storeAuthData()
+          $rootScope.currentUser = user;
           if (userType === 'STUDENT') {
             $state.go('student-app');
           } else {
@@ -89,7 +89,7 @@ function AuthService(Parse, $state, $rootScope, StudentModel, TutorModel) {
    * @name AuthService#addByType
    * @methodOf components.auth:AuthService
    * @param {object} obj user data from auth-form
-   * @returns {object} returns the new user object and uploads to parse
+   * @returns {object} returns the new user object and uploads to corresponding parse class
    */
 
   this.addByType = function(user) {
