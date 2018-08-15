@@ -43,7 +43,7 @@ function AuthController(AuthService) {
       .then(newUser => {
         console.log(newUser);
         let user = newUser;
-        alert("A verfication email has been sent to " + newUser.email)
+        alert("A verfication email has been sent to " + user.email)
         return AuthService.logout()
           .then(() => {
             toggleRegister() //shows login view

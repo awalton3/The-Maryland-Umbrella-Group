@@ -15,17 +15,27 @@
 
   <div>
     <md-content>
-      <md-sidenav class="md-sidenav-right sideNavLeft--width height--full background--baseColor" md-component-id="right" md-disable-backdrop md-is-locked-open="$mdMedia('gt-sm')" md-whiteframe="3">
-        <md-toolbar class="md-scroll-shrink background--baseColor" flex>
+      <md-sidenav class="md-sidenav-right sideNavRight--width height--full background--baseColor" md-component-id="right" md-disable-backdrop md-is-locked-open="$mdMedia('gt-sm')" md-whiteframe="3">
+        <md-toolbar class="md-scroll-shrink background--baseColor">
           <h1 layout="row" layout-align="center center" class="md-toolbar-tools text--center text--weightBold">STUDENTS</h1>
         </md-toolbar>
-        <md-content class="background--baseColor" layout-margin>
-          <p>
-            This will be the tutor's student contact list.
-          </p>
+        <md-content class="background--baseColor">
+
+          <md-card class="background sideNavRight__studentCard">
+            <md-card-title layout="row" layout-align="space-around center">
+              <div layout="row" layout-align="center center" class="sideNavRight__studentCard__initials">
+                <p class="sideNavRight__studentCard__initialsText">J.D.</p>
+              </div>
+              <div>
+                <p style="color: #2b5570" class="text--right text--weightBold text--upperCase md-body-1">Jane Doe</p>
+                <p style="color: #2b5570" class="text--right text--upperCase md-caption">AP U.S. Government</p>
+              </div>
+            </md-card-title>
+          </md-card>
+
         </md-content>
       </md-sidenav>
     </md-content>
   </div>
-  
+
 </div>

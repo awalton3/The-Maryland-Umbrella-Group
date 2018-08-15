@@ -216,6 +216,29 @@ md-sidenav.sideNavRight--width {
   max-width: 270px !important;
 }
 
+.sideNavRight__studentCard {
+  border-radius: 15px 0px 15px 0px;
+  height: 75px;
+  margin: 8px 20px;
+}
+
+.sideNavRight__studentCard__initials {
+  border-radius: 15px 0px 0px 0px;
+  margin-left: -28px;
+  margin-top: -8px;
+  background-color: #de6600;
+  height: 75px;
+  width: 65px;
+}
+
+.sideNavRight__studentCard__initialsText {
+  color: white;
+  font-size: 18px;
+  text-align: center;
+  font-weight: bold;
+  width: 50%;
+}
+
 @font-face {
   font-family: 'Material Icons';
   font-style: normal;
