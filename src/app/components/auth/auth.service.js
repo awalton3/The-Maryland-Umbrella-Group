@@ -5,12 +5,9 @@
  * @description Handles authentication for app
  */
 
-function AuthService(Parse, $state, $rootScope, StudentModel) {
+function AuthService(Parse, $state, $rootScope, StudentModel, TutorModel) {
   var auth = new Parse.User(); // creates a new user in Parse
   var currentUser = null; //holds info about current user
-  // var isLogin = false; //sends signal to controller on whether to route to login tab
-
-  //this.isLogin = false;
 
   /**
    * @ngdoc method
@@ -86,6 +83,43 @@ function AuthService(Parse, $state, $rootScope, StudentModel) {
     return auth
 
   };
+
+  /**
+   * @ngdoc method
+   * @name AuthService#addByType
+   * @methodOf components.auth:AuthService
+   * @param {object} obj user data from auth-form
+   * @returns {object} returns the new user object and uploads to parse
+   */
+
+  this.addByType = function(user) {
+
+    if (user.type === 'STUDENT') {
+      return StudentModel.New()
+        .then(newStudentObject => {
+          newStudentObject.set("firstname", user.firstname);
+          newStudentObject.set("lastname", user.lastname);
+          newStudentObject.set("password", user.password);
+          newStudentObject.set("email", user.email);
+          newStudentObject.save()
+            .then(newStudentObject => {
+              Promise.resolve(console.log(newStudentObject.id));
+            }).catch(error => console.log(error))
+        })
+    } else if (user.type === 'TUTOR') {
+      return TutorModel.New()
+        .then(newTutorObject => {
+          newTutorObject.set("firstname", user.firstname);
+          newTutorObject.set("lastname", user.lastname);
+          newTutorObject.set("password", user.password);
+          newTutorObject.set("email", user.email);
+          newTutorObject.save()
+            .then(newTutorObject => {
+              Promise.resolve(console.log(newTutorObject.id));
+            }).catch(error => console.log(error))
+        })
+    }
+  }
 
   /**
    * @ngdoc method

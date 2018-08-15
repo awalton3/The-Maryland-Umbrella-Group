@@ -44,25 +44,13 @@ function AuthController(AuthService, StudentModel) {
         alert("A verfication email has been sent to " + event.user.email)
         return AuthService.logout()
           .then(() => {
-            toggleRegister()
-
-            if (event.user.type === 'STUDENT') {
-              return StudentModel.New()
-                .then(parseObject => {
-                  console.log(parseObject)
-                  parseObject.set("firstname", event.user.firstname);
-                  parseObject.set("lastname", event.user.lastname);
-                  parseObject.set("password", event.user.password);
-                  parseObject.set("email", event.user.email);
-                })
-            }
-
+            toggleRegister() //shows login view
+            return AuthService.addByType(event.user) //sends user info to Student or Tutor parse class
           })
-      })
-      .catch(error => alert(error))
+          .catch(error => alert(error))
+      });
   }
 
-  //TODO put logic in AuthService
   function reset(email) {
     if (email) {
       Parse.User
