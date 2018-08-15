@@ -7,14 +7,15 @@ function UploadsController($mdSidenav, $rootScope, TutorModel) {
 
     //define functions
     ctrl.getStudents = getStudents;
-    getStudents();
 
+    //run functions on init
+    getStudents(); // retrieves students and corresponding subjects from parse for current user
   }
 
 function getStudents() {
   return TutorModel.getByUser(ctrl.user).then(parseObject => {
-    console.log("STUDENTS: ", parseObject[0].attributes.students);
-    console.log("Subjects: ", parseObject[0].attributes.subjects);
+    ctrl.students = parseObject[0].attributes.students;
+    ctrl.subjects = parseObject[0].attributes.subjects;
   })
 }
 

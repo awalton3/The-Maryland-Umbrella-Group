@@ -21,7 +21,9 @@
         </md-toolbar>
         <md-content class="background--baseColor">
 
-          <student-card name="Jane Doe" subject="AP U.S. Government"></student-card>
+          <div ng-repeat="student in $ctrl.students">
+            <student-card name="{{ student }}" subject="{{ $ctrl.subjects[$index] }}"></student-card>
+          </div>
 
         </md-content>
       </md-sidenav>
