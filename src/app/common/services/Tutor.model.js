@@ -4,10 +4,7 @@ class TutorModel {
         this.data = {};
         this.name = 'Tutor';
         this.fields = [
-            'lastname',
-            'firstname',
-            'password',
-            'email',
+            'user',
             'students',
             'subjects'
         ];

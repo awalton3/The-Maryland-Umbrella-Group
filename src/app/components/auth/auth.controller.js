@@ -40,12 +40,14 @@ function AuthController(AuthService) {
 
     return AuthService.register(event.user)
       .signUp(null)
-      .then(() => {
-        alert("A verfication email has been sent to " + event.user.email)
+      .then(newUser => {
+        console.log(newUser);
+        let user = newUser;
+        alert("A verfication email has been sent to " + newUser.email)
         return AuthService.logout()
           .then(() => {
             toggleRegister() //shows login view
-            return AuthService.addByType(event.user) //sends user info to Student or Tutor parse class
+            return AuthService.addByType(user) //sends user info to Student or Tutor parse class
           })
           .catch(error => alert(error))
       });

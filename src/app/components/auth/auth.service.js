@@ -93,29 +93,23 @@ function AuthService(Parse, $state, $rootScope, StudentModel, TutorModel) {
    */
 
   this.addByType = function(user) {
-
-    if (user.type === 'STUDENT') {
+    console.log(user);
+    if (user.attributes.type === 'STUDENT') {
       return StudentModel.New()
         .then(newStudentObject => {
-          newStudentObject.set("firstname", user.firstname);
-          newStudentObject.set("lastname", user.lastname);
-          newStudentObject.set("password", user.password);
-          newStudentObject.set("email", user.email);
+          newStudentObject.set("user", user);
           newStudentObject.save()
             .then(newStudentObject => {
-              Promise.resolve(console.log(newStudentObject.id));
+              Promise.resolve();
             }).catch(error => console.log(error))
         })
-    } else if (user.type === 'TUTOR') {
+    } else if (user.attributes.type === 'TUTOR') {
       return TutorModel.New()
         .then(newTutorObject => {
-          newTutorObject.set("firstname", user.firstname);
-          newTutorObject.set("lastname", user.lastname);
-          newTutorObject.set("password", user.password);
-          newTutorObject.set("email", user.email);
+          newTutorObject.set('user', user);
           newTutorObject.save()
             .then(newTutorObject => {
-              Promise.resolve(console.log(newTutorObject.id));
+              Promise.resolve();
             }).catch(error => console.log(error))
         })
     }

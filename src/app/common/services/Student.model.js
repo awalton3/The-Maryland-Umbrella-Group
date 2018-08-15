@@ -4,10 +4,7 @@ class StudentModel {
         this.data = {};
         this.name = 'Student';
         this.fields = [
-            'lastname',
-            'firstname',
-            'password',
-            'email',
+            'user',
             'tutors',
             'subjects'
         ];
