@@ -7,7 +7,9 @@
     <md-content class="background" layout-fill>
       <app-nav title="uploads" left-icon="notes" right-icon="group"></app-nav>
       <md-content layout="row" layout-align="center center" class="background width--hundred">
-        <upload layout="row" layout-align="center center" class="width--hundred"></upload>
+        <div ng-repeat="upload in $ctrl.uploads" layout="column" layout-align="center center">
+          <upload name="{{ upload.attributes.firstname }} {{ upload.attributes.lastname }}" subject="{{ upload.attributes.subject }}" assignment="{{ upload.attributes.instructions }}" comments="{{ upload.attributes.comments }}"></upload>
+        </div>
       </md-content>
     </md-content>
     <div class="uploads__button">

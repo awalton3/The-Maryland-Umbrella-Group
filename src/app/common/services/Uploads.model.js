@@ -1,5 +1,6 @@
 class UploadsModel {
-    constructor(Parse) {
+    constructor($q, Parse) {
+        this.$q = $q;
         this.Parse = Parse;
         this.data = {};
         this.name = 'Uploads';
@@ -22,6 +23,21 @@ class UploadsModel {
             return obj;
         }
     }
+
+    getByUser(user) {
+      return this.$q((resolve, reject) => {
+        new this.Parse.Query(this.New())
+          .equalTo('tutor', user)
+          .find()
+          .then((results) => {
+            resolve(results);
+          }, (error) => {
+            this.ParseError.Catch(error);
+            reject(error);
+          });
+      });
+    }
+
     getById(id) {
         return new this.Parse.Query(this.New()).get(id)
             .then(result => {

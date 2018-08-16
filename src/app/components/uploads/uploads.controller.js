@@ -15,12 +15,14 @@ function UploadsController($mdSidenav, $rootScope, TutorModel, UploadsModel, $sc
     };
     //define functions
     ctrl.getStudents = getStudents;
+    ctrl.getUploads = getUploads;
     ctrl.buildToggler = buildToggler;
     ctrl.submitUpload = submitUpload;
     ctrl.clearForm = clearForm;
     ctrl.closeUploader = closeUploader;
 
     getStudents(); // retrieves students and corresponding subjects for current user onLoad
+    getUploads(); //retrieves uploads for current user onLoad
   }
 
   ctrl.$onChanges = function(changes) {
@@ -43,6 +45,15 @@ function UploadsController($mdSidenav, $rootScope, TutorModel, UploadsModel, $sc
         ctrl.initialsArray.push(initials)
       }
 
+    })
+  }
+
+  function getUploads() {
+    return UploadsModel.getByUser(ctrl.user).then(parseObject => {
+      ctrl.uploadsParseObject = [];
+      ctrl.uploadsParseObject.push(parseObject);
+      ctrl.uploads = ctrl.uploadsParseObject[0];
+      console.log(ctrl.uploads);
     })
   }
 
