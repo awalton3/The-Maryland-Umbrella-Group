@@ -2,22 +2,25 @@
 
   <app-sidenav></app-sidenav>
 
+  <!-- Uploads content area -->
   <div layout="column" layout-align="space-between center" class="uploads--height" layout-fill>
     <md-content class="background" layout-fill>
       <app-nav title="uploads" left-icon="notes" right-icon="group"></app-nav>
-      <md-content layout="row" layout-align="center center" style="width: 100%" class="background">
-        <upload layout="row" layout-align="center center" style="width: 100%"></upload>
+      <md-content layout="row" layout-align="center center" class="background width--hundred">
+        <upload layout="row" layout-align="center center" class="width--hundred"></upload>
       </md-content>
     </md-content>
     <div class="uploads__button">
       <md-fab-trigger class="position--right">
-        <md-button layout="row" layout-align="center center" aria-label="menu" class="md-fab background--highlightColor">
+        <md-button ng-click="$ctrl.toggleUploader()" layout="row" layout-align="center center" aria-label="menu" class="md-fab background--highlightColor">
           <i class="material-icons" style="color: #eaeaea;">create</i>
         </md-button>
       </md-fab-trigger>
     </div>
   </div>
 
+
+  <!-- Student right side-nav -->
   <div>
     <md-content>
       <md-sidenav class="md-sidenav-right sideNavRight--width height--full background--baseColor" md-component-id="right" md-disable-backdrop md-is-locked-open="$mdMedia('gt-sm')" md-whiteframe="3">
@@ -25,12 +28,57 @@
           <h1 layout="row" layout-align="center center" class="md-toolbar-tools text--center text--weightBold">STUDENTS</h1>
         </md-toolbar>
         <md-content class="background--baseColor">
-          <div ng-repeat="student in $ctrl.students" style="cursor: pointer">
+          <div ng-repeat="student in $ctrl.students">
             <student-card name="{{ student }}" subject="{{ $ctrl.subjects[$index] }}" initials="$ctrl.initialsArray[$index]"></student-card>
           </div>
         </md-content>
       </md-sidenav>
     </md-content>
   </div>
+
+  <!-- Uploader/Editor -->
+  <md-sidenav class="md-sidenav-right uploader--width height--full background" md-component-id="uploader" md-disable-backdrop md-whiteframe="3">
+    <md-toolbar layout="row" layout-align="space-between center" class="md-scroll-shrink background--mainColor">
+      <div>
+        <md-button class="md-button" layout="row" layout-align="center center"><i class="material-icons" style="color: #eaeaea">close</i></md-button>
+      </div>
+      <div>
+        <h1 layout="row" layout-align="center center" class="md-toolbar-tools uploader__toolbar">UPLOADER</h1>
+      </div>
+      <div>
+        <md-button class="md-button" layout="row" layout-align="center center"><i class="material-icons" style="color: #eaeaea">check</i></md-button>
+      </div>
+    </md-toolbar>
+    <md-content class="background" layout-padding>
+      <p class="uploader__title">STUDENT INFORMATION</p>
+      <md-list-item layout="row" layout-align="space-between center">
+
+        <div>
+          <md-input-container layout="row" layout-align="center center">
+            <label class="uploads__label">FIRST NAME</label>
+            <input type="text" name="firstname" autocomplete="off" />
+          </md-input-container>
+        </div>
+
+        <div>
+          <md-input-container layout="row" layout-align="center center">
+            <label class="uploads__label">LAST NAME</label>
+            <input type="text" name="lastname" autocomplete="off" />
+          </md-input-container>
+        </div>
+
+      </md-list-item>
+
+      <md-list-item>
+
+        <md-input-container layout="row" layout-align="center center">
+          <label class="uploads__label">Subject</label>
+          <input type="text" name="lastname" autocomplete="off" />
+        </md-input-container>
+
+      </md-list-item>
+
+    </md-content>
+  </md-sidenav>
 
 </div>

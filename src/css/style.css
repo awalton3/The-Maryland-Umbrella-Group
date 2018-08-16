@@ -64,6 +64,10 @@ md-tabs.md-default-theme .md-tab.md-active, md-tabs .md-tab.md-active, md-tabs.m
   width: 100vw !important;
 }
 
+.width--hundred {
+  width: 100% !important;
+}
+
 .height--full {
   height: 100vh !important;
 }
@@ -293,6 +297,35 @@ md-card md-card-title.studentCard__content {
 md-card md-card-title.uploads__cardTitle {
   padding-bottom: 0px;
 }
+
+/*************************************** UPLOADER ***************************************/
+
+md-sidenav.uploader--width {
+  width: 550px !important;
+  min-width: 550px !important;
+  max-width: 550px !important;
+}
+
+/* md-sidenav.uploader--height {
+  height: 95vh !important;
+} */
+
+.uploader__toolbar {
+  text-align: center;
+  font-weight: bold;
+  color: #eaeaea;
+}
+
+.uploader__title {
+  font-size: 14px;
+  text-align: left;
+  color: #2b5570;
+}
+
+.uploads__label {
+  font-size: 14px;
+}
+
 
 @font-face {
   font-family: 'Material Icons';
