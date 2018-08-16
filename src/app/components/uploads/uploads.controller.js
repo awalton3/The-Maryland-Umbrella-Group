@@ -1,4 +1,4 @@
-function UploadsController($mdSidenav, $rootScope, TutorModel, UploadsModel) {
+function UploadsController($mdSidenav, $rootScope, TutorModel, UploadsModel, $scope) {
 
   var ctrl = this;
   ctrl.$onInit = function() {
@@ -17,6 +17,8 @@ function UploadsController($mdSidenav, $rootScope, TutorModel, UploadsModel) {
     ctrl.getStudents = getStudents;
     ctrl.buildToggler = buildToggler;
     ctrl.submitUpload = submitUpload;
+    ctrl.clearForm = clearForm;
+    ctrl.closeUploader = closeUploader;
 
     getStudents(); // retrieves students and corresponding subjects for current user onLoad
   }
@@ -63,10 +65,24 @@ function UploadsController($mdSidenav, $rootScope, TutorModel, UploadsModel) {
         newUpload.save()
           .then(newUpload => {
             Promise.resolve(console.log(newUpload.id))
+            clearForm();
           }).catch(error => console.log(error))
-      })
+      }).catch(error => alert(error))
   };
 
+  function clearForm() {
+    ctrl.upload = {};
+    $scope.uploadForm.$setPristine();
+    $scope.uploadForm.$setUntouched();
+  }
+
+  function closeUploader() {
+    let alert = window.confirm("Closing this window will delete all form inputs. Are you sure you would like to close the uploader?");
+    if (alert) {
+      ctrl.toggleUploader();
+      clearForm();
+    }
+  }
 
 }
 
