@@ -317,9 +317,9 @@ md-input-container.uploads:not(.md-input-invalid).md-input-focused label {
 
 
 md-sidenav.uploader--width {
-  width: 500px !important;
-  min-width: 500px !important;
-  max-width: 500px !important; 
+  width: 550px !important;
+  min-width: 550px !important;
+  max-width: 550px !important;
 }
 
 /* md-sidenav.uploader--height {
@@ -346,6 +346,10 @@ md-sidenav.uploader--width {
 
 .uploads__input--width {
   width: 347px !important;
+}
+
+.uploads__input--widthHalf {
+  width: 171px !important;
 }
 
 
