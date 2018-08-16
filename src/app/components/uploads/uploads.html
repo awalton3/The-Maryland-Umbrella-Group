@@ -28,7 +28,7 @@
         </md-toolbar>
         <md-content class="background--baseColor">
           <div ng-repeat="student in $ctrl.students" style="cursor: pointer">
-            <student-card name="{{ student }}" subject="{{ $ctrl.subjects[$index] }}"></student-card>
+            <student-card name="{{ student }}" subject="{{ $ctrl.subjects[$index] }}" initials="$ctrl.initialsArray[$index]"></student-card>
           </div>
         </md-content>
       </md-sidenav>

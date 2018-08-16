@@ -3,7 +3,8 @@ var studentCard = {
   controller: 'StudentCardController',
   bindings: {
     name: '@',
-    subject: '@'
+    subject: '@',
+    initials: '<'
   }
 }
 
