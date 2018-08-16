@@ -46,7 +46,7 @@
         <h1 layout="row" layout-align="center center" class="md-toolbar-tools uploader__toolbar">UPLOADER</h1>
       </div>
       <div>
-        <md-button class="md-button" layout="row" layout-align="center center"><i class="material-icons" style="color: #eaeaea">check</i></md-button>
+        <md-button class="md-button" layout="row" layout-align="center center"><i class="material-icons" style="color: #eaeaea">done</i></md-button>
       </div>
     </md-toolbar>
     <md-content class="background" layout-padding>
@@ -55,14 +55,14 @@
 
         <div>
           <md-input-container layout="row" layout-align="center center">
-            <label class="uploads__label">FIRST NAME</label>
+            <label class="uploads__label">first name</label>
             <input type="text" name="firstname" autocomplete="off" />
           </md-input-container>
         </div>
 
         <div>
           <md-input-container layout="row" layout-align="center center">
-            <label class="uploads__label">LAST NAME</label>
+            <label class="uploads__label">last name</label>
             <input type="text" name="lastname" autocomplete="off" />
           </md-input-container>
         </div>
@@ -72,8 +72,28 @@
       <md-list-item>
 
         <md-input-container layout="row" layout-align="center center">
-          <label class="uploads__label">Subject</label>
-          <input type="text" name="lastname" autocomplete="off" />
+          <label class="uploads__label">subject</label>
+          <input class="uploads__input--width" type="text" name="subject" autocomplete="off" />
+        </md-input-container>
+
+      </md-list-item>
+
+      <p class="uploader__title">ASSIGNMENT</p>
+      <md-list-item>
+
+        <md-input-container style="margin-bottom: 0px;">
+          <label class="uploads__label">instructions</label>
+          <textarea  class="uploads__input--width" rows="2" md-select-on-focus></textarea>
+        </md-input-container>
+
+      </md-list-item>
+
+      <p class="uploader__title">ADDITIONAL INFORMATION</p>
+      <md-list-item>
+
+        <md-input-container>
+          <label class="uploads__label">comments/notes</label>
+          <textarea  class="uploads__input--width" rows="2" md-select-on-focus></textarea>
         </md-input-container>
 
       </md-list-item>

@@ -43,6 +43,21 @@ md-tabs.md-default-theme .md-tab.md-active, md-tabs .md-tab.md-active, md-tabs.m
   font-weight: bold;
 }
 
+/* change color of md-input when focused */
+md-input-container:not(.md-input-invalid).md-input-focused .md-input {
+    border-color: #de6600 !important;
+}
+md-input-container:not(.md-input-invalid).md-input-focused label {
+    color: #de6600 !important;
+}
+
+/* changing font-family and font-size for md-inputs */
+md-input-container .md-input {
+  font-size: 14px !important;
+  font-family: 'Montserrat', sans-serif !important;
+}
+
+
 /* helper classes */
 .background {
   background-color: #eaeaea !important;
@@ -317,13 +332,19 @@ md-sidenav.uploader--width {
 }
 
 .uploader__title {
-  font-size: 14px;
+  padding: 16px 16px 0px 16px;
+  font-size: 15px;
   text-align: left;
   color: #2b5570;
 }
 
 .uploads__label {
-  font-size: 14px;
+  font-size: 13px;
+  text-transform: uppercase;
+}
+
+.uploads__input--width {
+  width: 347px !important;
 }
 
 
