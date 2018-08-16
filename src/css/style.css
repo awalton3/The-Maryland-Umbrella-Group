@@ -43,14 +43,6 @@ md-tabs.md-default-theme .md-tab.md-active, md-tabs .md-tab.md-active, md-tabs.m
   font-weight: bold;
 }
 
-/* change color of md-input when focused */
-md-input-container:not(.md-input-invalid).md-input-focused .md-input {
-    border-color: #de6600 !important;
-}
-md-input-container:not(.md-input-invalid).md-input-focused label {
-    color: #de6600 !important;
-}
-
 /* changing font-family and font-size for md-inputs */
 md-input-container .md-input {
   font-size: 14px !important;
@@ -315,10 +307,19 @@ md-card md-card-title.uploads__cardTitle {
 
 /*************************************** UPLOADER ***************************************/
 
+/* change color of md-input when focused */
+md-input-container.uploads:not(.md-input-invalid).md-input-focused .md-input {
+    border-color: #de6600 !important;
+}
+md-input-container.uploads:not(.md-input-invalid).md-input-focused label {
+    color: #de6600 !important;
+}
+
+
 md-sidenav.uploader--width {
-  width: 550px !important;
-  min-width: 550px !important;
-  max-width: 550px !important;
+  width: 500px !important;
+  min-width: 500px !important;
+  max-width: 500px !important; 
 }
 
 /* md-sidenav.uploader--height {

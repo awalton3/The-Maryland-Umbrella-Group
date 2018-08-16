@@ -1,17 +1,32 @@
-function UploadsController($mdSidenav, $rootScope, TutorModel) {
+function UploadsController($mdSidenav, $rootScope, TutorModel, UploadsModel) {
 
   var ctrl = this;
   ctrl.$onInit = function() {
     //define variables
     ctrl.user = $rootScope.currentUser;
+    console.log(ctrl.user)
     ctrl.toggleUploader = buildToggler('uploader');
-
+    ctrl.upload = {
+      firstname: '',
+      lastname: '',
+      subject: '',
+      instructions: '',
+      comments: ''
+    };
     //define functions
     ctrl.getStudents = getStudents;
     ctrl.buildToggler = buildToggler;
+    ctrl.submitUpload = submitUpload;
 
     getStudents(); // retrieves students and corresponding subjects for current user onLoad
   }
+
+  ctrl.$onChanges = function(changes) {
+    if (changes.upload) {
+      console.log(changes.upload);
+      ctrl.upload = angular.copy(ctrl.upload);
+    }
+  };
 
   function getStudents() {
     return TutorModel.getByUser(ctrl.user).then(parseObject => {
@@ -35,6 +50,22 @@ function UploadsController($mdSidenav, $rootScope, TutorModel) {
       $mdSidenav(componentId).toggle();
     };
   }
+
+  function submitUpload(uploadObject) {
+    return Promise.resolve(UploadsModel.New())
+      .then(newUpload => {
+        newUpload.set('firstname', uploadObject.firstname);
+        newUpload.set('lastname', uploadObject.lastname);
+        newUpload.set('subject', uploadObject.subject);
+        newUpload.set('instructions', uploadObject.instructions);
+        newUpload.set('comments', uploadObject.comments);
+        newUpload.set('tutor', ctrl.user);
+        newUpload.save()
+          .then(newUpload => {
+            Promise.resolve(console.log(newUpload.id))
+          }).catch(error => console.log(error))
+      })
+  };
 
 
 }
