@@ -352,6 +352,14 @@ md-sidenav.uploader--width {
   width: 171px !important;
 }
 
+.uploader__icon--active {
+  color: #eaeaea !important;
+}
+
+.uploader__icon--disabled {
+  color: grey !important;
+}
+
 
 @font-face {
   font-family: 'Material Icons';

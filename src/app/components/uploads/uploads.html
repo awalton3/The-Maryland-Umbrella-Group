@@ -46,7 +46,7 @@
         <h1 layout="row" layout-align="center center" class="md-toolbar-tools uploader__toolbar">UPLOADER</h1>
       </div>
       <div>
-        <md-button ng-click="$ctrl.submitUpload($ctrl.upload); $ctrl.toggleUploader()" ng-disabled="uploadForm.$invalid" class="md-button" layout="row" layout-align="center center"><i class="material-icons" style="color: #eaeaea">done</i></md-button>
+        <md-button ng-click="$ctrl.submitUpload($ctrl.upload); $ctrl.toggleUploader()" ng-disabled="uploadForm.$invalid" class="md-button" layout="row" layout-align="center center"><i class="material-icons" ng-class="{'uploader__icon--active': uploadForm.$invalid === false}">done</i></md-button>
       </div>
     </md-toolbar>
     <md-content class="background" layout-padding>
