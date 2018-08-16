@@ -57,7 +57,7 @@ md-tabs.md-default-theme .md-tab.md-active, md-tabs .md-tab.md-active, md-tabs.m
 }
 
 .background--highlightColor {
-  background-color: #de6660 !important;
+  background-color: #de6600 !important;
 }
 
 .width--full {
@@ -248,6 +248,16 @@ md-card md-card-title.studentCard__content {
 
 .studentCard__contentText {
   margin-left: 10px;
+}
+
+/*************************************** UPLOADS ***************************************/
+
+.uploads--height {
+  height: 87vh;
+}
+
+.uploads__button--width {
+  width: 100%;
 }
 
 @font-face {

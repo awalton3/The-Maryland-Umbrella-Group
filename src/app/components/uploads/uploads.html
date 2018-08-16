@@ -2,15 +2,22 @@
 
   <app-sidenav></app-sidenav>
 
-  <div class="width--full">
-    <md-content class="background">
+  <div layout="column" layout-align="space-between center" class="uploads--height" layout-fill>
+    <md-content class="background" layout-fill>
       <app-nav title="uploads" left-icon="notes" right-icon="group"></app-nav>
-      <md-content class="background" flex>
+      <md-content class="background" layout-margin>
         <p>
           Uploads go here.
         </p>
       </md-content>
     </md-content>
+    <div class="uploads__button--width">
+      <md-fab-trigger class="position--right">
+        <md-button layout="row" layout-align="center center" aria-label="menu" class="md-fab background--highlightColor">
+          <i class="material-icons" style="color: #eaeaea;">create</i>
+        </md-button>
+      </md-fab-trigger>
+    </div>
   </div>
 
   <div>
@@ -20,7 +27,7 @@
           <h1 layout="row" layout-align="center center" class="md-toolbar-tools text--center text--weightBold">STUDENTS</h1>
         </md-toolbar>
         <md-content class="background--baseColor">
-          <div ng-repeat="student in $ctrl.students">
+          <div ng-repeat="student in $ctrl.students" style="cursor: pointer">
             <student-card name="{{ student }}" subject="{{ $ctrl.subjects[$index] }}"></student-card>
           </div>
         </md-content>
