@@ -230,7 +230,6 @@ md-sidenav.sideNavRight--width {
   border-radius: 15px 0px 0px 0px;
   margin-left: -5px;
   margin-top: -10px;
-  background-color: #e74a59;
   min-height: 75px;
 }
 
@@ -256,8 +255,9 @@ md-card md-card-title.studentCard__content {
   height: 87vh;
 }
 
-.uploads__button--width {
+.uploads__button {
   width: 100%;
+  margin-right: 40px;
 }
 
 @font-face {
