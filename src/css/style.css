@@ -115,6 +115,11 @@ md-input-container .md-input {
   float: left !important;
 }
 
+.background--transparent {
+  background: transparent !important;
+}
+
+
 /*************************************** AUTH COMPONENT ***************************************/
 
 md-input-container.auth {
@@ -236,13 +241,11 @@ md-sidenav.sideNavRight--width {
 }
 
 .sideNavRight__studentCard {
-  border-radius: 15px 0px 0px 0px;
   height: 75px;
   margin: 8px 20px;
 }
 
 .sideNavRight__studentCard__initials {
-  border-radius: 15px 0px 0px 0px;
   margin-left: -5px;
   margin-top: -10px;
   min-height: 75px;
@@ -266,18 +269,42 @@ md-card md-card-title.studentCard__content {
 
 /*************************************** UPLOADS ***************************************/
 
-.uploads--height {
-  height: 87vh;
-}
-
 .uploads__button {
   width: 100%;
   margin-right: 40px;
 }
 
+.uploads__button--marginTop {
+  margin-top: -90px;
+}
+
+.uploads__empty--backgroundImage {
+  background-image: url("img/emptyUploads.jpg");
+}
+
+.uploads__empty--height {
+  height: 70vh;
+  width: 70%;
+}
+
+.uploads__emptyTitle {
+  color: white;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.uploads__emptyText {
+  color: white;
+  text-align: center;
+  font-size: 19px;
+  padding: 15px 0px;
+}
+
 .upload__card {
     background-color: #eaeaea;
-    width: 600px;
+    width: 700px;
 }
 
 md-card md-card-header.upload__header {

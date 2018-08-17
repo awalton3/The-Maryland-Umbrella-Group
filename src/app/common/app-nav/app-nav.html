@@ -1,16 +1,16 @@
-<md-toolbar class="md-scroll-shrink background" flex>
+<md-toolbar class="md-scroll-shrink {{ $ctrl.toolbarStyle }}" flex>
   <div class="md-toolbar-tools" layout="row" layout-align="space-between center">
     <div>
       <md-button ng-click="$ctrl.toggleLeft()" class="md-icon-button">
-        <img src="img/{{$ctrl.leftIcon}}.svg" />
+        <i style="color: {{ $ctrl.iconColor }}" class="material-icons">{{$ctrl.leftIcon}}</i>
       </md-button>
     </div>
     <div>
-      <h1 class="text--weightBold text--upperCase" style="color: #2b5570">{{ $ctrl.title }}</h1>
+      <h1 class="text--weightBold text--upperCase" style="color:{{$ctrl.iconColor}}">{{ $ctrl.title }}</h1>
     </div>
     <div>
       <md-button ng-click="$ctrl.toggleRight()" class="md-icon-button">
-        <i style="color: #de6600" class="material-icons">{{$ctrl.rightIcon}}</i>
+        <i style="color: {{ $ctrl.iconColor }}" class="material-icons">{{$ctrl.rightIcon}}</i>
       </md-button>
     </div>
   </div>

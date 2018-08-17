@@ -4,7 +4,9 @@ var appNav = {
   bindings: {
     title: '@',
     leftIcon: '@',
-    rightIcon: '@'
+    rightIcon: '@',
+    toolbarStyle: '@',
+    iconColor: '@'
   }
 }
 

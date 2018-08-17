@@ -10,7 +10,8 @@ class UploadsModel {
             'subject',
             'instructions',
             'comments',
-            'tutor'
+            'tutor',
+            'createdAt'
         ];
     }
     New(obj) {

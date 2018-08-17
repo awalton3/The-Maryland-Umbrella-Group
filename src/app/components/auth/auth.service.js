@@ -103,7 +103,7 @@ function AuthService(Parse, $state, $rootScope, StudentModel, TutorModel) {
             }).catch(error => console.log(error))
         })
     } else if (user.attributes.type === 'TUTOR') {
-      return TutorModel.New()
+      return Promise.resolve(TutorModel.New())
         .then(newTutorObject => {
           newTutorObject.set('user', user);
           newTutorObject.save()

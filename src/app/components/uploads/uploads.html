@@ -3,18 +3,42 @@
   <app-sidenav></app-sidenav>
 
   <!-- Uploads content area -->
-  <div layout="column" layout-align="space-between center" class="uploads--height" layout-fill>
-    <md-content class="background" layout-fill>
-      <app-nav title="uploads" left-icon="notes" right-icon="group"></app-nav>
-      <md-content layout="row" layout-align="center center" class="background width--hundred">
+  <div ng-if="$ctrl.uploads.length" layout="column" layout-align="space-between center" class="auth--animation.ng-enter height--full" layout-fill>
+    <md-content  class="background" layout-fill>
+      <app-nav title="uploads" left-icon="menu" right-icon="group" toolbar-style="background" icon-color="#2b5570"></app-nav>
+      <md-content layout="column" layout-align="center center" class="background width--hundred">
         <div ng-repeat="upload in $ctrl.uploads" layout="column" layout-align="center center">
-          <upload name="{{ upload.attributes.firstname }} {{ upload.attributes.lastname }}" subject="{{ upload.attributes.subject }}" assignment="{{ upload.attributes.instructions }}" comments="{{ upload.attributes.comments }}"></upload>
+          <upload name="{{ upload.attributes.firstname }} {{ upload.attributes.lastname }}" subject="{{ upload.attributes.subject }}" assignment="{{ upload.attributes.instructions }}" comments="{{ upload.attributes.comments }}" createdAt="{{ upload.createdAt }}"></upload>
         </div>
       </md-content>
     </md-content>
     <div class="uploads__button">
       <md-fab-trigger class="position--right">
-        <md-button ng-click="$ctrl.toggleUploader()" layout="row" layout-align="center center" aria-label="menu" class="md-fab background--highlightColor">
+        <md-button ng-click="$ctrl.toggleUploader()" layout="row" layout-align="center center" aria-label="menu" class="md-fab background--highlightColor uploads__button--marginTop">
+          <i class="material-icons" style="color: #eaeaea;">create</i>
+        </md-button>
+      </md-fab-trigger>
+    </div>
+  </div>
+
+<!-- Empty State for uploads -->
+  <div ng-if="!$ctrl.uploads.length" layout="column" layout-align="space-between center" class="auth--animation.ng-leave height--full" layout-fill>
+    <md-content  style="background-image: url('img/emptyUploads.jpg')" layout-fill>
+      <app-nav title="uploads" left-icon="menu" right-icon="group" toolbar-style="background--transparent" icon-color="#eaeaea"></app-nav>
+      <md-content layout="column" layout-align="center center" class="background--transparent width--hundred">
+        <div class="uploads__empty--height" layout="column" layout-align="center center">
+          <p class="uploads__emptyTitle">
+            BUILD A STRONGER CONNECTION WITH YOUR STUDENT.
+          </p>
+          <p class="uploads__emptyText">
+            Upload an assignment using the create button on the bottom right or select a student to view, edit or create an assignment.
+          </p>
+        </div>
+      </md-content>
+    </md-content>
+    <div class="uploads__button">
+      <md-fab-trigger class="position--right">
+        <md-button ng-click="$ctrl.toggleUploader()" layout="row" layout-align="center center" aria-label="menu" class="md-fab background--highlightColor uploads__button--marginTop">
           <i class="material-icons" style="color: #eaeaea;">create</i>
         </md-button>
       </md-fab-trigger>

@@ -77,6 +77,7 @@ function UploadsController($mdSidenav, $rootScope, TutorModel, UploadsModel, $sc
           .then(newUpload => {
             Promise.resolve(console.log(newUpload.id))
             clearForm();
+            getUploads();
           }).catch(error => console.log(error))
       }).catch(error => alert(error))
   };

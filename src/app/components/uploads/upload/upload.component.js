@@ -5,7 +5,8 @@ var upload = {
     name: '@',
     subject: '@',
     assignment: '@',
-    comments: '@'
+    comments: '@',
+    createdAt: '<'
   }
 }
 
