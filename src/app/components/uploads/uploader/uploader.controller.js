@@ -57,8 +57,9 @@ function UploaderController($mdSidenav, $rootScope, $scope, UploadsModel) {
         newUpload.set('tutor', ctrl.user);
         newUpload.save()
           .then(newUpload => {
-            Promise.resolve(alert('Your upload for ' + uploadObject.firstname + '' + uploadObject.lastname + ' has been submitted.'))
+            Promise.resolve(alert('Your upload for ' + uploadObject.firstname + ' ' + uploadObject.lastname + ' has been submitted.'))
             clearForm();
+            ctrl.toggleUploader();
             // getUploads();
           }).catch(error => console.log(error))
       }).catch(error => alert(error))

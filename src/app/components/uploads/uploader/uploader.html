@@ -1,6 +1,6 @@
 <md-sidenav class="md-sidenav-right uploader--width height--full background" md-component-id="uploader" md-disable-backdrop md-whiteframe="3">
 
-  <md-toolbar layout="row" layout-align="space-between center" class="md-scroll-shrink background--mainColor">
+  <md-toolbar layout="row" layout-align="space-between center" class="background--mainColor">
     <div>
       <md-button ng-click="$ctrl.closeUploader()" layout="row" layout-align="center center" class="md-toolbar-tools"><i class="material-icons text--backgroundColor">close</i></md-button>
     </div>
@@ -8,7 +8,7 @@
       <h1 layout="row" layout-align="center center" class="md-toolbar-tools uploader__toolbar">UPLOADER</h1>
     </div>
     <div>
-      <md-button ng-click="$ctrl.submitUpload($ctrl.upload); $ctrl.toggleUploader()" ng-disabled="uploadForm.$invalid" layout="row" layout-align="center center" class="md-toolbar-tools"><i class="material-icons" ng-class="{'uploader__icon--active': uploadForm.$invalid === false}">done</i></md-button>
+      <md-button ng-click="$ctrl.submitUpload($ctrl.upload)" ng-disabled="uploadForm.$invalid" layout="row" layout-align="center center" class="md-toolbar-tools"><i class="material-icons" ng-class="{'uploader__icon--active': !uploadForm.$invalid, 'uploader__icon--disabled': uploadForm.$invalid}">done</i></md-button>
     </div>
   </md-toolbar>
 
@@ -18,23 +18,23 @@
       <p class="uploader__title">STUDENT INFORMATION</p>
 
       <md-list-item layout="row" layout-align="space-between center">
-        <div>
-          <md-input-container layout="row" layout-align="center center" class="uploads">
+        <div layout-fill>
+          <md-input-container layout="row" layout-align="center center" class="uploads" layout-fill>
             <label class="uploads__label">first name</label>
-            <input class="uploads__input--widthHalf" type="text" name="firstname" ng-model="$ctrl.upload.firstname" autocomplete="off" required/>
+            <input class="uploads__input--width" type="text" name="firstname" ng-model="$ctrl.upload.firstname" autocomplete="off" required/>
           </md-input-container>
         </div>
-        <div>
-          <md-input-container layout="row" layout-align="center center" class="uploads">
+        <div layout-fill>
+          <md-input-container layout="row" layout-align="center center" class="uploads" layout-fill>
             <label class="uploads__label">last name</label>
-            <input class="uploads__input--widthHalf" type="text" name="lastname" ng-model="$ctrl.upload.lastname" autocomplete="off" required/>
+            <input class="uploads__input--width" type="text" name="lastname" ng-model="$ctrl.upload.lastname" autocomplete="off" required/>
           </md-input-container>
         </div>
       </md-list-item>
 
-      <md-list-item>
-        <md-input-container layout="row" layout-align="center center" class="uploads">
-          <label class="uploads__label">subject</label>
+      <md-list-item style="margin-top: 16px;">
+        <md-input-container class="uploads" layout-fill>
+          <label class="uploads__label uploads__lable--padding">subject</label>
           <input class="uploads__input--width" type="text" name="subject" ng-model="$ctrl.upload.subject" autocomplete="off" required/>
         </md-input-container>
       </md-list-item>
@@ -42,7 +42,7 @@
       <p class="uploader__title">ASSIGNMENT</p>
 
       <md-list-item>
-        <md-input-container style="margin-bottom: 0px;" class="uploads">
+        <md-input-container style="margin-bottom: 0px;" class="uploads" layout-fill>
           <label class="uploads__label">instructions</label>
           <textarea class="uploads__input--width" rows="2" ng-model="$ctrl.upload.instructions" md-select-on-focus required></textarea>
         </md-input-container>
@@ -51,7 +51,7 @@
       <p class="uploader__title">ADDITIONAL INFORMATION</p>
 
       <md-list-item>
-        <md-input-container class="uploads">
+        <md-input-container class="uploads" layout-fill>
           <label class="uploads__label">comments/notes</label>
           <textarea class="uploads__input--width" ng-model="$ctrl.upload.comments" rows="2" md-select-on-focus></textarea>
         </md-input-container>
