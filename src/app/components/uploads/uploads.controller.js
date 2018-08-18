@@ -1,9 +1,10 @@
-function UploadsController($rootScope, TutorModel, UploadsModel) {
+function UploadsController($mdSidenav, $rootScope, TutorModel, UploadsModel) {
 
   var ctrl = this;
   ctrl.$onInit = function() {
     //define variables
     ctrl.user = $rootScope.currentUser;
+    ctrl.toggleUploader = buildToggler('uploader');
     ctrl.upload = {
       firstname: '',
       lastname: '',
@@ -13,11 +14,19 @@ function UploadsController($rootScope, TutorModel, UploadsModel) {
     };
 
     //define functions
+    ctrl.buildToggler = buildToggler;
     ctrl.getStudents = getStudents;
     ctrl.getUploads = getUploads;
 
     getStudents(); // retrieves students and corresponding subjects for current user onLoad
     getUploads(); //retrieves uploads for current user onLoad
+  }
+
+  function buildToggler(componentId) {
+    console.log(componentId)
+    return function() {
+      $mdSidenav(componentId).toggle();
+    };
   }
 
   function getStudents() {

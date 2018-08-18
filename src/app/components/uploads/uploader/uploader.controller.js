@@ -1,6 +1,8 @@
-function UploaderController($mdSidenav, $scope, UploadsModel) {
+function UploaderController($mdSidenav, $rootScope, $scope, UploadsModel) {
+  var ctrl = this;
   ctrl.$onInit = function() {
     //define variables
+    ctrl.user = $rootScope.currentUser;
     ctrl.toggleUploader = buildToggler('uploader');
     ctrl.upload = {
       firstname: '',
@@ -49,7 +51,7 @@ function UploaderController($mdSidenav, $scope, UploadsModel) {
         newUpload.set('tutor', ctrl.user);
         newUpload.save()
           .then(newUpload => {
-            Promise.resolve(console.log(newUpload.id))
+            Promise.resolve(alert('Your upload for ' + uploadObject.firstname + '' + uploadObject.lastname + ' has been submitted.'))
             clearForm();
             // getUploads();
           }).catch(error => console.log(error))
