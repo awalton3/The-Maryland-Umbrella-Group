@@ -33,8 +33,14 @@ function UploaderController($mdSidenav, $rootScope, $scope, UploadsModel) {
   }
 
   function closeUploader() {
-    let alert = window.confirm("Closing this window will delete all form inputs. Are you sure you would like to close the uploader?");
-    if (alert) {
+
+    if ($scope.uploadForm.$dirty) {
+      let alert = window.confirm("Closing this window will delete all form inputs. Are you sure you would like to close the uploader?");
+      if (alert) {
+        ctrl.toggleUploader();
+        clearForm();
+      }
+    } else {
       ctrl.toggleUploader();
       clearForm();
     }
