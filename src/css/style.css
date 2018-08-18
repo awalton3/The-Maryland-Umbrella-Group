@@ -99,6 +99,22 @@ md-input-container .md-input {
   font-family: 'Montserrat', sans-serif !important;
 }
 
+.text--backgroundColor {
+  color: #eaeaea !important;
+}
+
+.text--mainColor {
+  color: #2b5570 !important;
+}
+
+.text--baseColor {
+  color: #263f4e !important;
+}
+
+.text--highlightColor {
+  color: #de6600 !important;
+}
+
 .text--weightBold {
   font-weight: bold !important;
 }
